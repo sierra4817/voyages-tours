@@ -3,146 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages.tours | Comparador de Viajes Real</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>VT-AS | Viajes por el Mundo con Trip.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --trip-blue: #0066ff; --trip-orange: #ff9900; --dark: #1a1a1a; --bg: #f0f2f5; }
+        :root { --trip-blue: #0066ff; --trip-orange: #ff9900; --dark: #1a1a1a; --bg: #ffffff; }
         body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg); color: var(--dark); scroll-behavior: smooth; }
         
-        header { background: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo { font-size: 26px; font-weight: 800; color: var(--trip-blue); text-decoration: none; }
+        header { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 24px; font-weight: 800; color: var(--trip-blue); text-decoration: none; letter-spacing: -1px; }
         
         .hero { 
-            height: 50vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&w=1920&q=80') center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
+        .hero h1 { font-size: 48px; margin-bottom: 10px; }
+        .hero p { font-size: 20px; opacity: 0.9; }
 
-        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
-        
-        .partners { display: flex; justify-content: center; gap: 30px; margin-top: -30px; flex-wrap: wrap; }
-        .partner-card { background: white; padding: 15px 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-weight: 700; color: var(--trip-blue); text-decoration: none; transition: 0.3s; }
-        .partner-card:hover { transform: translateY(-5px); color: var(--trip-orange); }
+        .container { max-width: 1200px; margin: auto; padding: 60px 20px; }
+        .section-title { font-size: 32px; margin-bottom: 40px; font-weight: 800; text-align: center; }
 
-        .section-title { font-size: 28px; margin-bottom: 30px; font-weight: 700; border-left: 6px solid var(--trip-blue); padding-left: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .card { border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.4s; border: 1px solid #eee; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        
+        .card-body { padding: 25px; }
+        .tag { font-size: 12px; font-weight: 700; color: var(--trip-blue); text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .card-title { font-size: 22px; font-weight: 700; margin-bottom: 15px; }
+        
+        .price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+        .price { font-size: 24px; font-weight: 800; color: var(--dark); }
+        .price span { font-size: 14px; font-weight: 400; color: #666; }
+        
+        .btn-trip { background: var(--trip-blue); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .btn-trip:hover { background: #0052cc; box-shadow: 0 5px 15px rgba(0,102,255,0.3); }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
-        .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: 0.3s; position: relative; }
-        .card:hover { transform: scale(1.02); }
-        .card img { width: 100%; height: 240px; object-fit: cover; }
-        
-        .promo-badge { position: absolute; top: 15px; left: 15px; background: #ff4d4d; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; }
-        
-        .card-body { padding: 20px; }
-        .location { font-size: 14px; color: #666; margin-bottom: 5px; }
-        .card-title { font-size: 20px; font-weight: 700; margin-bottom: 15px; }
-        
-        .price-box { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #eee; padding-top: 15px; }
-        .real-price { font-size: 24px; font-weight: 800; color: var(--trip-blue); }
-        .real-price span { font-size: 12px; color: #888; font-weight: 400; }
-        
-        .btn-book { background: var(--trip-orange); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; }
-        .btn-book:hover { background: #e68a00; }
-
-        footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; margin-top: 60px; }
+        footer { background: #f8f9fa; padding: 40px 20px; text-align: center; border-top: 1px solid #eee; }
+        .cta-header { background: var(--trip-orange); color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 14px; }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo">Trip Voyages</a>
-    <nav>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" target="_blank" style="margin-right: 20px; color: var(--trip-blue); font-weight: bold;">Trip.com Ofertas</a>
-        <a href="https://www.skyscanner.es" target="_blank">Skyscanner</a>
-    </nav>
+    <a href="#" class="logo">VT-AS <span style="color:var(--dark)">VOYAGES</span></a>
+    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" target="_blank" class="cta-header">BUSCAR VUELOS</a>
 </header>
 
 <section class="hero">
-    <h1>Ofertas Reales en Tiempo Real</h1>
-    <p>Conectamos con los mejores proveedores del mundo</p>
+    <h1>Explora el Mundo</h1>
+    <p>Reserva los mejores hoteles y vuelos con la garantía de Trip.com</p>
 </section>
 
-<div class="partners">
-    <a href="https://www.booking.com" class="partner-card" target="_blank">Booking.com</a>
-    <a href="https://www.tripadvisor.es" class="partner-card" target="_blank">TripAdvisor</a>
-    <a href="https://www.skyscanner.es" class="partner-card" target="_blank">Skyscanner</a>
-</div>
-
 <div class="container">
-    <h2 class="section-title">Destinos Europeos Populares (Precios 2026)</h2>
+    <h2 class="section-title">Destinos Globales Destacados</h2>
     
     <div class="grid">
         <div class="card">
-            <div class="promo-badge">Oferta Flash</div>
-            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="Londres">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Tokyo">
             <div class="card-body">
-                <p class="location">Reino Unido • Vuelo + 3 noches</p>
-                <div class="card-title">Londres: El Corazón del Reino</div>
-                <div class="price-box">
-                    <div class="real-price">458€ <span>/ total</span></div>
-                    <a href="https://www.trip.com/flights/to-london/airfare-lon/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-book">Ver en Trip.com</a>
+                <span class="tag">Asia</span>
+                <div class="card-title">Tokio: Tradición y Futuro</div>
+                <div class="price-row">
+                    <div class="price">890€<span>/vuelo+hotel</span></div>
+                    <a href="https://www.trip.com/hotels/tokyo-hotels-list-228/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-trip">Ver Oferta</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Madrid">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai">
             <div class="card-body">
-                <p class="location">España • Hotel 4 Estrellas</p>
-                <div class="card-title">Madrid: Plaza Mayor y Museos</div>
-                <div class="price-box">
-                    <div class="real-price">124€ <span>/ noche</span></div>
-                    <a href="https://www.booking.com/searchresults.es.html?ss=Madrid" target="_blank" class="btn-book">Ver en Booking</a>
+                <span class="tag">Medio Oriente</span>
+                <div class="card-title">Dubái: Lujo en el Desierto</div>
+                <div class="price-row">
+                    <div class="price">150€<span>/noche</span></div>
+                    <a href="https://www.trip.com/hotels/dubai-hotels-list-2/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-trip">Reservar</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="promo-badge">Top Ventas</div>
-            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="París">
+            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="New York">
             <div class="card-body">
-                <p class="location">Francia • Paquete Completo</p>
-                <div class="card-title">París: Luces y Torre Eiffel</div>
-                <div class="price-box">
-                    <div class="real-price">612€ <span>/ persona</span></div>
-                    <a href="https://www.tripadvisor.es/Tourism-g187147-Paris_Ile_de_France-Vacations.html" target="_blank" class="btn-book">Ver Opiniones</a>
+                <span class="tag">Norteamérica</span>
+                <div class="card-title">Nueva York: La Gran Manzana</div>
+                <div class="price-row">
+                    <div class="price">550€<span>/vuelos</span></div>
+                    <a href="https://www.trip.com/flights/to-new-york/airfare-nyc/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-trip">Buscar</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Roma">
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldives">
             <div class="card-body">
-                <p class="location">Italia • Historia Antigua</p>
-                <div class="card-title">Roma: Coliseo y Vaticano</div>
-                <div class="price-box">
-                    <div class="real-price">389€ <span>/ vuelo+hotel</span></div>
-                    <a href="https://www.skyscanner.es/vuelos-a/rom/vuelos-baratos-a-roma.html" target="_blank" class="btn-book">Buscar Vuelos</a>
+                <span class="tag">Paraíso</span>
+                <div class="card-title">Maldivas: Relax Total</div>
+                <div class="price-row">
+                    <div class="price">1.200€<span>/premium</span></div>
+                    <a href="https://www.trip.com/hotels/maldives-hotels-list-100041/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-trip">Ver Más</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=800&q=80" alt="Amsterdam">
+            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80" alt="Bangkok">
             <div class="card-body">
-                <p class="location">Países Bajos • Hoteles</p>
-                <div class="card-title">Ámsterdam: Canales y Tulipanes</div>
-                <div class="price-box">
-                    <div class="real-price">295€ <span>/ 2 noches</span></div>
-                    <a href="https://www.trip.com/hotels/amsterdam-hotels-list-297/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-book">Ver Hoteles</a>
+                <span class="tag">Sudeste Asiático</span>
+                <div class="card-title">Bangkok: Templos y Sabor</div>
+                <div class="price-row">
+                    <div class="price">45€<span>/noche</span></div>
+                    <a href="https://www.trip.com/hotels/bangkok-hotels-list-359/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-trip">Explorar</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="promo-badge">-25% Hoy</div>
-            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" alt="Santorini">
+            <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80" alt="Rio">
             <div class="card-body">
-                <p class="location">Grecia • Lujo y Mar</p>
-                <div class="card-title">Santorini: Atardeceres Mágicos</div>
-                <div class="price-box">
-                    <div class="real-price">840€ <span>/ premium</span></div>
-                    <a href="https://www.trip.com/travel-guide/santorini-314/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-book">Guía de Viaje</a>
+                <span class="tag">Sudamérica</span>
+                <div class="card-title">Río de Janeiro: Samba y Sol</div>
+                <div class="price-row">
+                    <div class="price">780€<span>/paquete</span></div>
+                    <a href="https://www.trip.com/hotels/rio-de-janeiro-hotels-list-1144/?Allianceid=8047264&SID=304625434" target="_blank" class="btn-trip">Mejor Precio</a>
                 </div>
             </div>
         </div>
@@ -150,8 +134,8 @@
 </div>
 
 <footer>
-    <p>Voyages.tours | Comparador Independiente de Precios Reales</p>
-    <p style="font-size: 12px; color: #777;">Los precios mostrados son estimaciones basadas en datos de Trip.com, Booking y Skyscanner para 2026.</p>
+    <p><strong>VT-AS Voyages</strong> | Partner Oficial de Trip.com</p>
+    <p style="font-size: 13px; color: #888;">© 2026 Todos los derechos reservados. Las reservas se procesan de forma segura en Trip.com</p>
 </footer>
 
 </body>
