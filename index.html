@@ -33,9 +33,10 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
         .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: 0.3s; border: 1px solid #eee; position: relative; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .card a { text-decoration: none; color: inherit; display: block; }
         .card img { width: 100%; height: 220px; object-fit: cover; }
         
-        .badge { position: absolute; top: 15px; left: 15px; background: var(--trip-orange); color: white; padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .badge { position: absolute; top: 15px; left: 15px; background: var(--trip-orange); color: white; padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10; }
         
         .card-body { padding: 20px; }
         .dest-name { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 8px; }
@@ -45,7 +46,7 @@
         .price-label { font-size: 12px; color: #888; display: block; }
         .price-value { font-size: 24px; font-weight: 800; color: var(--trip-blue); }
         
-        .btn-trip { background: var(--trip-blue); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; }
+        .btn-trip { background: var(--trip-blue); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; display: inline-block; }
         .btn-trip:hover { background: #0052cc; box-shadow: 0 4px 10px rgba(0,102,255,0.3); }
 
         /* Footer */
@@ -59,12 +60,12 @@
 <body>
 
 <header>
-    <a href="#" class="logo">Trip<span>Voyages</span></a>
+    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" class="logo" target="_blank" rel="noopener noreferrer">Voyages<span>.tours</span></a>
     <div class="nav-links">
-        <a href="https://www.trip.com/hotels/" target="_blank">Hoteles</a>
-        <a href="https://www.trip.com/flights/" target="_blank">Vuelos</a>
-        <a href="https://www.trip.com/trains/" target="_blank">Trenes</a>
-        <a href="https://www.trip.com/sale/w/2348/global-deals.html" target="_blank" style="color: var(--trip-orange);">Ofertas Flash</a>
+        <a href="https://www.trip.com/hotels/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">Hoteles</a>
+        <a href="https://www.trip.com/flights/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">Vuelos</a>
+        <a href="https://www.trip.com/trains/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">Trenes</a>
+        <a href="https://www.trip.com/sale/w/2348/global-deals.html?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer" style="color: var(--trip-orange);">Ofertas Flash</a>
     </div>
 </header>
 
@@ -82,7 +83,9 @@
     <div class="grid">
         <div class="card">
             <div class="badge">Mejor Precio</div>
-            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Madrid">
+            <a href="https://www.trip.com/hotels/madrid-hotels-list-212/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Madrid">
+            </a>
             <div class="card-body">
                 <div class="dest-name">Madrid: Cultura y Gastronomía</div>
                 <div class="dest-details">📍 España • Hoteles en Centro Ciudad</div>
@@ -91,14 +94,16 @@
                         <span class="price-label">Desde</span>
                         <div class="price-value">89€ <small style="font-size: 12px;">/noche</small></div>
                     </div>
-                    <a href="https://www.trip.com/hotels/madrid-hotels-list-212/" target="_blank" class="btn-trip">Reservar</a>
+                    <a href="https://www.trip.com/hotels/madrid-hotels-list-212/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer" class="btn-trip">Reservar</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <div class="badge">Top Destino</div>
-            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="Londres">
+            <a href="https://www.trip.com/vuelos/a-londres/airfare-lon/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="Londres">
+            </a>
             <div class="card-body">
                 <div class="dest-name">Londres: Escapada Urbana</div>
                 <div class="dest-details">📍 Reino Unido • Vuelos + Hotel</div>
@@ -107,13 +112,15 @@
                         <span class="price-label">Paquete desde</span>
                         <div class="price-value">425€</div>
                     </div>
-                    <a href="https://www.trip.com/vuelos/a-londres/airfare-lon/" target="_blank" class="btn-trip">Ver Oferta</a>
+                    <a href="https://www.trip.com/vuelos/a-londres/airfare-lon/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer" class="btn-trip">Ver Oferta</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Roma">
+            <a href="https://www.trip.com/hotels/rome-hotels-list-316/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Roma">
+            </a>
             <div class="card-body">
                 <div class="dest-name">Roma: El Coliseo Eterno</div>
                 <div class="dest-details">📍 Italia • Desayuno Incluido</div>
@@ -122,14 +129,16 @@
                         <span class="price-label">Noche desde</span>
                         <div class="price-value">110€</div>
                     </div>
-                    <a href="https://www.trip.com/hotels/rome-hotels-list-316/" target="_blank" class="btn-trip">Reservar</a>
+                    <a href="https://www.trip.com/hotels/rome-hotels-list-316/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer" class="btn-trip">Reservar</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <div class="badge">Recomendado</div>
-            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="París">
+            <a href="https://www.trip.com/hotels/paris-hotels-list-192/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="París">
+            </a>
             <div class="card-body">
                 <div class="dest-name">París: Torre Eiffel y Sena</div>
                 <div class="dest-details">📍 Francia • Escapada Romántica</div>
@@ -138,13 +147,15 @@
                         <span class="price-label">Desde</span>
                         <div class="price-value">145€</div>
                     </div>
-                    <a href="https://www.trip.com/hotels/paris-hotels-list-192/" target="_blank" class="btn-trip">Ver Hoteles</a>
+                    <a href="https://www.trip.com/hotels/paris-hotels-list-192/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer" class="btn-trip">Ver Hoteles</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=800&q=80" alt="Amsterdam">
+            <a href="https://www.trip.com/hotels/amsterdam-hotels-list-297/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=800&q=80" alt="Amsterdam">
+            </a>
             <div class="card-body">
                 <div class="dest-name">Ámsterdam: Canales Mágicos</div>
                 <div class="dest-details">📍 Países Bajos • Hoteles con Encanto</div>
@@ -153,14 +164,16 @@
                         <span class="price-label">Noche desde</span>
                         <div class="price-value">132€</div>
                     </div>
-                    <a href="https://www.trip.com/hotels/amsterdam-hotels-list-297/" target="_blank" class="btn-trip">Reservar</a>
+                    <a href="https://www.trip.com/hotels/amsterdam-hotels-list-297/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer" class="btn-trip">Reservar</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <div class="badge">Oferta</div>
-            <img src="https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=800&q=80" alt="Grecia">
+            <a href="https://www.trip.com/vuelos/a-atenas/airfare-ath/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=800&q=80" alt="Grecia">
+            </a>
             <div class="card-body">
                 <div class="dest-name">Atenas: Cuna de la Historia</div>
                 <div class="dest-details">📍 Grecia • Vuelos Low Cost</div>
@@ -169,7 +182,7 @@
                         <span class="price-label">Vuelos desde</span>
                         <div class="price-value">78€</div>
                     </div>
-                    <a href="https://www.trip.com/vuelos/a-atenas/airfare-ath/" target="_blank" class="btn-trip">Buscar Vuelos</a>
+                    <a href="https://www.trip.com/vuelos/a-atenas/airfare-ath/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" target="_blank" rel="noopener noreferrer" class="btn-trip">Buscar Vuelos</a>
                 </div>
             </div>
         </div>
@@ -178,11 +191,11 @@
 
 <footer>
     <div class="footer-content">
-        <a href="#" class="footer-logo">Trip<span>Voyages</span></a>
+        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" class="footer-logo" target="_blank" rel="noopener noreferrer">Voyages<span>.tours</span></a>
         <p>Tu guía de confianza para las mejores ofertas en Trip.com</p>
     </div>
     <div class="disclaimer">
-        *Aviso: Voyages.tours participa en el programa de afiliados de Trip.com. Al hacer clic en los enlaces y realizar una reserva, podríamos recibir una comisión sin costo adicional para usted. Los precios son referenciales y están sujetos a disponibilidad en la plataforma oficial de Trip.com.
+        *Aviso: <strong>Voyages.tours</strong> participa en el programa de afiliados de Trip.com. Al hacer clic en los enlaces y realizar una reserva, recibirás el mejor precio disponible y nosotros podríamos recibir una comisión sin costo adicional para usted. Los precios son referenciales y están sujetos a disponibilidad en la plataforma oficial de Trip.com.
     </div>
 </footer>
 
