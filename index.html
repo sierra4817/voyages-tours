@@ -3,153 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages.tours | Tu Agencia Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Voyages.tours | Destinos de Lujo 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <style>
-        :root { --blue: #0066ff; --orange: #ff9900; --dark: #002b5c; }
-        body { font-family: 'Montserrat', sans-serif; margin: 0; background-color: #f0f4f8; color: #333; }
+        :root { --trip-blue: #0066ff; --trip-orange: #ff9900; --bg: #ffffff; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #f4f7f9; color: #1a1a1a; }
         
-        /* Navegación Superior */
-        header { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-        .logo { font-size: 26px; font-weight: 900; color: var(--blue); text-decoration: none; }
-        .logo span { color: var(--orange); }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 20px; font-size: 14px; text-transform: uppercase; }
+        header { background: #ffffff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .logo { font-size: 28px; font-weight: 900; color: var(--trip-blue); text-decoration: none; }
+        .logo span { color: var(--trip-orange); }
 
-        /* Banner de Impacto */
         .hero { 
-            height: 50vh; 
-            background: linear-gradient(rgba(0,43,92,0.4), rgba(0,43,92,0.7)), url('https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?auto=format&fit=crop&w=1600&q=80') center/cover;
+            height: 40vh; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80') center/cover;
             display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
-        .hero h1 { font-size: clamp(30px, 5vw, 60px); font-weight: 900; margin: 0; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .hero p { font-size: 18px; margin-top: 10px; opacity: 0.9; }
+        .hero h1 { font-size: 50px; font-weight: 900; text-shadow: 2px 4px 10px rgba(0,0,0,0.5); margin: 0; }
 
-        /* Contenedor Principal */
         .container { max-width: 1400px; margin: auto; padding: 40px 20px; }
-        
-        /* Grid de Destinos */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
         
-        .card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; position: relative; border: 1px solid rgba(0,0,0,0.05); }
-        .card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,102,255,0.2); }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.4s; border: 1px solid #eee; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,102,255,0.15); }
         
-        .img-wrapper { width: 100%; height: 260px; overflow: hidden; position: relative; }
-        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-        .card:hover img { transform: scale(1.1); }
+        /* Contenedor de Imagen de Alta Calidad */
+        .img-box { width: 100%; height: 250px; overflow: hidden; background: #ccc; }
+        .card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.5s; 
+            filter: brightness(0.95) contrast(1.1); /* Mejora la nitidez visual */
+        }
+        .card:hover img { transform: scale(1.1); filter: brightness(1); }
         
-        .badge { position: absolute; top: 20px; left: 20px; background: white; color: var(--dark); padding: 6px 15px; border-radius: 50px; font-size: 11px; font-weight: 900; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-transform: uppercase; }
-
-        .card-body { padding: 25px; text-align: center; }
-        .dest-title { font-size: 24px; font-weight: 900; color: var(--dark); margin-bottom: 10px; }
-        .dest-desc { font-size: 14px; color: #666; margin-bottom: 20px; min-height: 40px; }
+        .badge { position: absolute; top: 20px; left: 20px; background: var(--trip-orange); color: white; padding: 6px 15px; border-radius: 50px; font-size: 12px; font-weight: 900; z-index: 10; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         
-        /* BOTÓN PROFESIONAL: TEXTO BLANCO PURO */
-        .btn-reserve { 
-            display: block;
-            background: linear-gradient(135deg, var(--blue), #0044cc);
+        .card-body { padding: 25px; position: relative; }
+        .dest-name { font-size: 24px; font-weight: 900; margin-bottom: 5px; color: #002b5c; }
+        .dest-info { font-size: 15px; color: #666; margin-bottom: 20px; }
+        
+        .price-row { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #eee; }
+        .price { font-size: 28px; font-weight: 900; color: var(--trip-blue); }
+        
+        /* BOTÓN REPARADO: TEXTO BLANCO PURO */
+        .btn { 
+            background: var(--trip-blue); 
             color: #ffffff !important; 
-            padding: 15px; 
-            border-radius: 15px; 
+            padding: 12px 25px; 
+            border-radius: 12px; 
             text-decoration: none; 
             font-weight: 900; 
-            font-size: 16px; 
-            box-shadow: 0 8px 20px rgba(0,102,255,0.3);
+            font-size: 15px; 
+            box-shadow: 0 5px 15px rgba(0,102,255,0.3);
             transition: 0.3s;
-            text-transform: uppercase;
         }
-        .btn-reserve:hover { transform: scale(1.03); box-shadow: 0 12px 25px rgba(0,102,255,0.4); }
+        .btn:hover { background: #0044cc; transform: scale(1.05); }
 
-        /* Footer */
-        footer { background: var(--dark); color: white; padding: 60px 5%; text-align: center; margin-top: 100px; }
-        .f-logo { font-size: 28px; font-weight: 900; color: white; text-decoration: none; margin-bottom: 20px; display: block; }
-        .f-logo span { color: var(--orange); }
-        .legal { font-size: 12px; color: #88a0bc; max-width: 700px; margin: 30px auto 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+        footer { background: #001a33; color: white; padding: 60px 5%; text-align: center; margin-top: 80px; }
+        .footer-logo { font-size: 32px; font-weight: 900; color: white; text-decoration: none; display: block; margin-bottom: 20px; }
+        .footer-logo span { color: var(--trip-orange); }
+        .disclaimer { font-size: 13px; color: #aaa; max-width: 800px; margin: auto; border-top: 1px solid #333; padding-top: 20px; }
     </style>
 </head>
 <body>
 
 <header>
     <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="logo" target="_blank">Voyages<span>.tours</span></a>
-    <div class="nav-links">
-        <a href="https://www.trip.com/hotels/?Allianceid=8047264&SID=304625434" target="_blank">Hoteles</a>
-        <a href="https://www.trip.com/flights/?Allianceid=8047264&SID=304625434" target="_blank">Vuelos</a>
-    </div>
 </header>
 
 <section class="hero">
-    <h1>VIAJA CON VOYAGES.TOURS</h1>
-    <p>Ofertas exclusivas en los mejores destinos del mundo</p>
+    <h1>Selección Global 2026</h1>
 </section>
 
 <div class="container">
     <div class="grid">
-        <div class="card">
-            <div class="badge">España</div>
-            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Madrid"></div>
+        <div class="card" style="position: relative;">
+            <div class="badge">ESPAÑA</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1543783232-f79f0c679b0c?auto=format&fit=crop&w=800&q=80" alt="Madrid"></div>
             <div class="card-body">
-                <div class="dest-title">Madrid</div>
-                <div class="dest-desc">Disfruta de la mejor gastronomía y cultura de España.</div>
-                <a href="https://www.trip.com/hotels/madrid-hotels-list-212/?Allianceid=8047264&SID=304625434" class="btn-reserve" target="_blank">RESERVAR AHORA</a>
+                <div class="dest-name">Madrid</div>
+                <div class="dest-info">Gastronomía y cultura vibrante</div>
+                <div class="price-row">
+                    <div class="price">89€</div>
+                    <a href="https://www.trip.com/hotels/madrid-hotels-list-212/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">RESERVAR</a>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="badge">Francia</div>
-            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Paris"></div>
+        <div class="card" style="position: relative;">
+            <div class="badge">FRANCIA</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Paris"></div>
             <div class="card-body">
-                <div class="dest-title">París</div>
-                <div class="dest-desc">La ciudad de la luz te espera con sus mejores hoteles.</div>
-                <a href="https://www.trip.com/hotels/paris-hotels-list-192/?Allianceid=8047264&SID=304625434" class="btn-reserve" target="_blank">VER OFERTAS</a>
+                <div class="dest-name">París</div>
+                <div class="dest-info">La ciudad de la luz y el romance</div>
+                <div class="price-row">
+                    <div class="price">145€</div>
+                    <a href="https://www.trip.com/hotels/paris-hotels-list-192/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">RESERVAR</a>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="badge">Italia</div>
-            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Roma"></div>
+        <div class="card" style="position: relative;">
+            <div class="badge">ITALIA</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Roma"></div>
             <div class="card-body">
-                <div class="dest-title">Roma</div>
-                <div class="dest-desc">Camina por la historia eterna con tarifas increíbles.</div>
-                <a href="https://www.trip.com/hotels/rome-hotels-list-316/?Allianceid=8047264&SID=304625434" class="btn-reserve" target="_blank">EXPLORAR</a>
+                <div class="dest-name">Roma</div>
+                <div class="dest-info">Historia eterna en cada calle</div>
+                <div class="price-row">
+                    <div class="price">110€</div>
+                    <a href="https://www.trip.com/hotels/rome-hotels-list-316/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">RESERVAR</a>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="badge">Japón</div>
-            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo"></div>
+        <div class="card" style="position: relative;">
+            <div class="badge">JAPÓN</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokio"></div>
             <div class="card-body">
-                <div class="dest-title">Tokio</div>
-                <div class="dest-desc">Tradición milenaria y tecnología futurista.</div>
-                <a href="https://www.trip.com/hotels/tokyo-hotels-list-228/?Allianceid=8047264&SID=304625434" class="btn-reserve" target="_blank">VER DESTINO</a>
+                <div class="dest-name">Tokio</div>
+                <div class="dest-info">Futurismo y tradición milenaria</div>
+                <div class="price-row">
+                    <div class="price">115€</div>
+                    <a href="https://www.trip.com/hotels/tokyo-hotels-list-228/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">RESERVAR</a>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="badge">Suiza</div>
-            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80" alt="Suiza"></div>
+        <div class="card" style="position: relative;">
+            <div class="badge">USA</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="NY"></div>
             <div class="card-body">
-                <div class="dest-title">Alpes Suizos</div>
-                <div class="dest-desc">Conecta con la naturaleza pura en los mejores resorts.</div>
-                <a href="https://www.trip.com/hotels/geneva-hotels-list-517/?Allianceid=8047264&SID=304625434" class="btn-reserve" target="_blank">RESERVAR</a>
+                <div class="dest-name">Nueva York</div>
+                <div class="dest-info">La energía de la Gran Manzana</div>
+                <div class="price-row">
+                    <div class="price">220€</div>
+                    <a href="https://www.trip.com/hotels/new-york-hotels-list-2/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">RESERVAR</a>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="badge">Paraíso</div>
-            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldivas"></div>
+        <div class="card" style="position: relative;">
+            <div class="badge">INDONESIA</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1537996194471-e657df675bc4?auto=format&fit=crop&w=800&q=80" alt="Bali"></div>
             <div class="card-body">
-                <div class="dest-title">Maldivas</div>
-                <div class="dest-desc">El paraíso azul que mereces visitar este año.</div>
-                <a href="https://www.trip.com/hotels/maldives-hotels-list-164/?Allianceid=8047264&SID=304625434" class="btn-reserve" target="_blank">IR AL PARAÍSO</a>
+                <div class="dest-name">Bali</div>
+                <div class="dest-info">Playas exóticas y paz espiritual</div>
+                <div class="price-row">
+                    <div class="price">55€</div>
+                    <a href="https://www.trip.com/hotels/bali-hotels-list-359/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">RESERVAR</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <a href="#" class="f-logo">Voyages<span>.tours</span></a>
-    <p>Tu viaje de ensueño comienza con un clic.</p>
-    <div class="legal">
-        © 2026 <strong>Voyages.tours</strong>. Al reservar mediante nuestros enlaces oficiales de Trip.com, garantizas el mejor precio. Nosotros recibimos una pequeña comisión por tu confianza.
+    <a href="#" class="footer-logo">Voyages<span>.tours</span></a>
+    <p>Afiliado Oficial de Trip.com | 2026</p>
+    <div class="disclaimer">
+        © 2026 <strong>Voyages.tours</strong>. Al reservar mediante nuestros enlaces oficiales, obtienes el precio mínimo de Trip.com y nosotros recibimos una comisión por la recomendación.
     </div>
 </footer>
 
