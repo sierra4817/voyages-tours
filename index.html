@@ -3,151 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages.tours - Especialistas en Europa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Voyages.tours - Explora el mundo con nosotros</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    
     <style>
-        body { font-family: 'Poppins', sans-serif; margin: 0; color: #333; background-color: #f4f7f6; scroll-behavior: smooth; }
-        header { background: #fff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 24px; font-weight: 600; color: #004488; text-transform: uppercase; letter-spacing: 1px; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; }
-        nav a { text-decoration: none; color: #555; font-weight: 400; transition: 0.3s; }
-        nav a:hover { color: #004488; }
-
-        .hero { 
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                              url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center; color: white; 
-            padding: 120px 20px; text-align: center; 
-        }
-        .hero h2 { font-size: 50px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-
-        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
-        h2.section-title { text-align: center; color: #004488; margin-bottom: 40px; font-size: 36px; }
+        /* Estilos básicos integrados (puedes moverlos a css/estilos.css) */
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background: #fff; padding: 1rem; border-bottom: 2px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        nav ul { list-style: none; display: flex; gap: 20px; padding: 0; }
+        nav a { text-decoration: none; color: #333; font-weight: bold; }
+        nav a:hover { color: #007bff; }
         
-        /* Cuadrícula de Destinos Mejorada */
-        .destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; position: relative; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .hero { background: #007bff; color: white; padding: 60px 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
         
-        .price-tag { position: absolute; top: 20px; right: 20px; background: #ffaa00; color: #000; padding: 5px 15px; font-weight: 600; border-radius: 50px; font-size: 14px; }
+        .destinations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
         
-        .card-content { padding: 25px; }
-        .card-content h3 { color: #004488; margin: 0 0 10px 0; font-size: 22px; }
-        .card-content p { color: #777; font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
-        .btn-card { display: inline-block; padding: 10px 20px; border: 2px solid #004488; color: #004488; text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s; }
-        .btn-card:hover { background: #004488; color: white; }
-
-        .contact-section { background: #004488; color: white; padding: 80px 20px; text-align: center; }
-        form { max-width: 600px; margin: 30px auto; background: white; padding: 30px; border-radius: 10px; }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        .btn-submit { background: #ffaa00; color: #000; border: none; padding: 15px 30px; cursor: pointer; font-weight: 600; border-radius: 5px; width: 100%; font-size: 16px; }
-
-        footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 50px 20px; }
+        form { background: white; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .form-group { margin-bottom: 15px; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .btn-submit { background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; }
+        
+        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
+        
+        /* Banner de Cookies Simple (Simulado con JS) */
+        #cookie-banner { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.9); color: white; padding: 15px; text-align: center; display: none; }
+        #cookie-banner button { background: #f1d600; border: none; padding: 5px 15px; margin-left: 10px; cursor: pointer; border-radius: 3px; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">Voyages.tours</div>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#destinos">Europa</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="hero">
-    <h2>Descubre la Magia de Europa</h2>
-    <p>Tours exclusivos por las ciudades más emblemáticas del viejo continente.</p>
-</section>
-
-<div class="container" id="destinos">
-    <h2 class="section-title">Destinos en Europa</h2>
-    <div class="destinos">
-        
-        <div class="card">
-            <div class="price-tag">Desde 899€</div>
-            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80" alt="Venecia, Italia">
-            <div class="card-content">
-                <h3>Venecia, Italia</h3>
-                <p>Navega por los canales históricos y descubre la arquitectura romántica de la ciudad de los puentes.</p>
-                <a href="#" class="btn-card">Ver Itinerario</a>
-            </div>
+    <header class="container">
+        <div class="logo">
+            <strong>Voyages.tours</strong>
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#featured">Destinos</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="card">
-            <div class="price-tag">Desde 750€</div>
-            <img src="https://images.unsplash.com/photo-1543783232-171f653ddac4?auto=format&fit=crop&w=800&q=80" alt="Madrid, España">
-            <div class="card-content">
-                <h3>Madrid, España</h3>
-                <p>Disfruta de la cultura vibrante, los museos de clase mundial y la mejor gastronomía española.</p>
-                <a href="#" class="btn-card">Ver Itinerario</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="price-tag">Desde 950€</div>
-            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" alt="Santorini, Grecia">
-            <div class="card-content">
-                <h3>Santorini, Grecia</h3>
-                <p>Vistas espectaculares al mar Egeo y puestas de sol inolvidables entre cúpulas azules y casas blancas.</p>
-                <a href="#" class="btn-card">Ver Itinerario</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="price-tag">Desde 1,200€</div>
-            <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80" alt="Alpes Suizos">
-            <div class="card-content">
-                <h3>Alpes Suizos, Suiza</h3>
-                <p>Aventura en la nieve y paisajes de montaña que parecen sacados de un cuento de hadas.</p>
-                <a href="#" class="btn-card">Ver Itinerario</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="price-tag">Desde 680€</div>
-            <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="Lisboa, Portugal">
-            <div class="card-content">
-                <h3>Lisboa, Portugal</h3>
-                <p>Explora las siete colinas, viaja en tranvía y déjate cautivar por el fado y los azulejos de la ciudad.</p>
-                <a href="#" class="btn-card">Ver Itinerario</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="price-tag">Desde 820€</div>
-            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" alt="Baviera, Alemania">
-            <div class="card-content">
-                <h3>Baviera, Alemania</h3>
-                <p>Visita castillos de ensueño y disfruta de la hospitalidad bávara en paisajes naturales increíbles.</p>
-                <a href="#" class="btn-card">Ver Itinerario</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<section class="contact-section" id="contacto">
     <div class="container">
-        <h2>¿Listo para tu próxima aventura?</h2>
-        <p>Déjanos tus datos y un asesor experto te ayudará a planear el viaje de tu vida.</p>
-        <form>
-            <input type="text" placeholder="Nombre completo" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <textarea placeholder="¿Qué países de Europa te gustaría visitar?" rows="5"></textarea>
-            <button type="button" class="btn-submit" onclick="alert('¡Pronto recibirás nuestras ofertas exclusivas para Europa!')">Solicitar Información</button>
-        </form>
-    </div>
-</section>
+        <section class="hero">
+            <h1>Tu próxima aventura comienza aquí</h1>
+            <p>Descubre los rincones más increíbles del planeta.</p>
+        </section>
 
-<footer>
-    <p>&copy; 2026 Voyages.tours - sierra4817 | Especialistas en viajes por Europa</p>
-    <p>Venecia | Madrid | Santorini | Alpes | Lisboa | Baviera</p>
-</footer>
+        <section id="featured">
+            <h2>Destinos Destacados</h2>
+            <div class="destinations-grid">
+                <div class="card">
+                    <img src="img/voyages.tours.jpg" alt="París" style="width:100%; border-radius:5px;">
+                    <h3>París, Francia</h3>
+                    <p>La ciudad de la luz te espera.</p>
+                </div>
+                <div class="card">
+                    <h3>Tokio, Japón</h3>
+                    <p>Tradición y futuro en un solo lugar.</p>
+                </div>
+                <div class="card">
+                    <h3>Nueva York, USA</h3>
+                    <p>La ciudad que nunca duerme.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" style="margin-top: 40px;">
+            <h2>Sobre Nosotros</h2>
+            <p>En Voyages.tours nos apasiona viajar. Somos expertos en crear experiencias inolvidables adaptadas a tu presupuesto y sueños.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contáctanos</h2>
+            <form>
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje:</label>
+                    <textarea rows="4" placeholder="¿A dónde quieres viajar?"></textarea>
+                </div>
+                <button type="button" class="btn-submit" onclick="alert('Gracias por tu mensaje. ¡Te contactaremos pronto!')">Enviar Consulta</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Voyages.tours - Todos los derechos reservados.</p>
+        <p><small><a href="#" style="color: #ccc;">Aviso Legal</a> | <a href="#" style="color: #ccc;">Política de Privacidad</a></small></p>
+    </footer>
+
+    <div id="cookie-banner">
+        Este sitio utiliza cookies para mejorar tu experiencia. 
+        <button onclick="aceptarCookies()">Aceptar</button>
+    </div>
+
+    <script>
+        // Lógica simple para mostrar el banner de cookies si no ha aceptado
+        window.onload = function() {
+            if (!localStorage.getItem('cookiesAceptadas')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        }
+
+        function aceptarCookies() {
+            localStorage.setItem('cookiesAceptadas', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
