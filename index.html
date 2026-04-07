@@ -9,143 +9,180 @@
         :root { --trip-blue: #0066ff; --trip-orange: #ff9900; --bg: #f5f7fa; }
         body { font-family: 'Roboto', sans-serif; margin: 0; background-color: var(--bg); color: #333; scroll-behavior: smooth; }
         
-        /* Header */
+        /* Header estilo Trip.com */
         header { background: white; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .logo { font-size: 26px; font-weight: 800; color: var(--trip-blue); text-decoration: none; display: flex; align-items: center; gap: 5px; }
         .logo span { color: var(--trip-orange); }
+        .nav-links a { text-decoration: none; color: #444; font-weight: 500; margin-left: 20px; font-size: 14px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--trip-blue); }
 
-        /* Hero & Tabs */
+        /* Banner Principal */
         .hero { 
-            background: linear-gradient(rgba(0,102,255,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&w=1920&q=80') center/cover;
-            padding: 60px 20px; text-align: center; color: white;
+            height: 45vh;
+            background: linear-gradient(rgba(0,102,255,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
-        .hero h1 { font-size: 36px; margin-bottom: 30px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .hero h1 { font-size: 42px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 2px 15px rgba(0,0,0,0.3); }
 
-        .search-container {
-            background: white; max-width: 900px; margin: auto; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .tabs { display: flex; background: #f8f9fb; border-bottom: 1px solid #eee; overflow-x: auto; }
-        .tab { padding: 15px 25px; cursor: pointer; color: #555; font-weight: 500; text-decoration: none; font-size: 14px; white-space: nowrap; }
-        .tab.active { background: white; color: var(--trip-blue); border-bottom: 3px solid var(--trip-blue); }
-        .tab:hover { color: var(--trip-blue); }
-
-        .search-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; padding: 20px; align-items: end; }
-        .input-group { text-align: left; }
-        .input-group label { display: block; font-size: 12px; color: #888; margin-bottom: 5px; }
-        .input-group input, .input-group select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
-        .btn-search { background: var(--trip-blue); color: white; border: none; padding: 12px; border-radius: 4px; font-weight: 700; cursor: pointer; text-decoration: none; display: block; text-align: center; }
-
-        /* Grid */
         .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
-        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: 0.3s; position: relative; }
-        .card:hover { transform: translateY(-5px); }
-        .card a { text-decoration: none; color: inherit; }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .badge { position: absolute; top: 15px; left: 15px; background: var(--trip-orange); color: white; padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+        .section-info { margin-bottom: 30px; }
+        .section-info h2 { font-size: 28px; color: #111; margin-bottom: 10px; }
+        .section-info p { color: #666; font-size: 16px; }
 
+        /* Grid de Ofertas */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: 0.3s; border: 1px solid #eee; position: relative; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        
+        .badge { position: absolute; top: 15px; left: 15px; background: var(--trip-orange); color: white; padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        
         .card-body { padding: 20px; }
         .dest-name { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 8px; }
+        .dest-details { font-size: 13px; color: #777; margin-bottom: 15px; display: flex; align-items: center; gap: 5px; }
+        
         .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 15px; }
+        .price-label { font-size: 12px; color: #888; display: block; }
         .price-value { font-size: 24px; font-weight: 800; color: var(--trip-blue); }
-        .btn-trip { background: var(--trip-blue); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; }
+        
+        .btn-trip { background: var(--trip-blue); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; }
+        .btn-trip:hover { background: #0052cc; box-shadow: 0 4px 10px rgba(0,102,255,0.3); }
 
-        footer { background: #002b5c; color: white; padding: 40px 5%; text-align: center; margin-top: 60px; }
-        .disclaimer { font-size: 11px; color: #aaa; margin-top: 20px; line-height: 1.5; }
+        /* Footer */
+        footer { background: #002b5c; color: white; padding: 60px 5% 30px; margin-top: 60px; }
+        .footer-content { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; margin-bottom: 20px; }
+        .footer-logo { font-size: 24px; font-weight: 800; margin-bottom: 15px; display: block; text-decoration: none; color: white; }
+        .footer-logo span { color: var(--trip-orange); }
+        .disclaimer { font-size: 12px; color: #aaa; max-width: 700px; margin: auto; line-height: 1.5; }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" class="logo">Trip<span>Voyages</span></a>
+    <a href="#" class="logo">Trip<span>Voyages</span></a>
+    <div class="nav-links">
+        <a href="https://www.trip.com/hotels/" target="_blank">Hoteles</a>
+        <a href="https://www.trip.com/flights/" target="_blank">Vuelos</a>
+        <a href="https://www.trip.com/trains/" target="_blank">Trenes</a>
+        <a href="https://www.trip.com/sale/w/2348/global-deals.html" target="_blank" style="color: var(--trip-orange);">Ofertas Flash</a>
+    </div>
 </header>
 
 <section class="hero">
-    <h1>Encuentra tu próximo viaje</h1>
-    
-    <div class="search-container">
-        <div class="tabs">
-            <a href="https://www.trip.com/flights/?Allianceid=8047264&SID=304625434" class="tab active">Flights</a>
-            <a href="https://www.trip.com/trains/?Allianceid=8047264&SID=304625434" class="tab">Trains</a>
-            <a href="https://www.trip.com/car-hire/?Allianceid=8047264&SID=304625434" class="tab">Cars</a>
-            <a href="https://www.trip.com/things-to-do/?Allianceid=8047264&SID=304625434" class="tab">Attractions</a>
-            <a href="https://www.trip.com/vuelos+hoteles/?Allianceid=8047264&SID=304625434" class="tab">Flight + Hotel</a>
-        </div>
-        
-        <div class="search-form">
-            <div class="input-group">
-                <label>Destination</label>
-                <input type="text" placeholder="Where to?">
-            </div>
-            <div class="input-group">
-                <label>Check-in</label>
-                <input type="date">
-            </div>
-            <div class="input-group">
-                <label>Check-out</label>
-                <input type="date">
-            </div>
-            <div class="input-group">
-                <label>Rooms and guests</label>
-                <select>
-                    <option>1 room, 2 adults</option>
-                </select>
-            </div>
-            <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434&trip_sub1=https%3A%2F%2Fvt-as.com%2F&trip_sub3=D15249537" class="btn-search">Search</a>
-        </div>
-    </div>
+    <h1>Las Mejores Ofertas de Trip.com</h1>
+    <p>Reserva con confianza y obtén Trip Coins en cada viaje</p>
 </section>
 
 <div class="container">
+    <div class="section-info">
+        <h2>Destinos Recomendados en Europa</h2>
+        <p>Precios reales verificados para estancias de temporada 2026</p>
+    </div>
+
     <div class="grid">
         <div class="card">
-            <a href="https://www.trip.com/hotels/madrid-hotels-list-212/?Allianceid=8047264&SID=304625434">
-                <div class="badge">Mejor Precio</div>
-                <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Madrid">
-                <div class="card-body">
-                    <div class="dest-name">Madrid: Oferta Especial</div>
-                    <div class="price-row">
-                        <div class="price-value">89€</div>
-                        <span class="btn-trip">Reservar</span>
+            <div class="badge">Mejor Precio</div>
+            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Madrid">
+            <div class="card-body">
+                <div class="dest-name">Madrid: Cultura y Gastronomía</div>
+                <div class="dest-details">📍 España • Hoteles en Centro Ciudad</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Desde</span>
+                        <div class="price-value">89€ <small style="font-size: 12px;">/noche</small></div>
                     </div>
+                    <a href="https://www.trip.com/hotels/madrid-hotels-list-212/" target="_blank" class="btn-trip">Reservar</a>
                 </div>
-            </a>
+            </div>
         </div>
 
         <div class="card">
-            <a href="https://www.trip.com/vuelos/a-londres/airfare-lon/?Allianceid=8047264&SID=304625434">
-                <div class="badge">Top Destino</div>
-                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="Londres">
-                <div class="card-body">
-                    <div class="dest-name">Londres: Vuelos + Hotel</div>
-                    <div class="price-row">
+            <div class="badge">Top Destino</div>
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="Londres">
+            <div class="card-body">
+                <div class="dest-name">Londres: Escapada Urbana</div>
+                <div class="dest-details">📍 Reino Unido • Vuelos + Hotel</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Paquete desde</span>
                         <div class="price-value">425€</div>
-                        <span class="btn-trip">Ver Oferta</span>
                     </div>
+                    <a href="https://www.trip.com/vuelos/a-londres/airfare-lon/" target="_blank" class="btn-trip">Ver Oferta</a>
                 </div>
-            </a>
+            </div>
         </div>
 
         <div class="card">
-            <a href="https://www.trip.com/hotels/rome-hotels-list-316/?Allianceid=8047264&SID=304625434">
-                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Roma">
-                <div class="card-body">
-                    <div class="dest-name">Roma: Escapada Clásica</div>
-                    <div class="price-row">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Roma">
+            <div class="card-body">
+                <div class="dest-name">Roma: El Coliseo Eterno</div>
+                <div class="dest-details">📍 Italia • Desayuno Incluido</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Noche desde</span>
                         <div class="price-value">110€</div>
-                        <span class="btn-trip">Reservar</span>
                     </div>
+                    <a href="https://www.trip.com/hotels/rome-hotels-list-316/" target="_blank" class="btn-trip">Reservar</a>
                 </div>
-            </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">Recomendado</div>
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="París">
+            <div class="card-body">
+                <div class="dest-name">París: Torre Eiffel y Sena</div>
+                <div class="dest-details">📍 Francia • Escapada Romántica</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Desde</span>
+                        <div class="price-value">145€</div>
+                    </div>
+                    <a href="https://www.trip.com/hotels/paris-hotels-list-192/" target="_blank" class="btn-trip">Ver Hoteles</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=800&q=80" alt="Amsterdam">
+            <div class="card-body">
+                <div class="dest-name">Ámsterdam: Canales Mágicos</div>
+                <div class="dest-details">📍 Países Bajos • Hoteles con Encanto</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Noche desde</span>
+                        <div class="price-value">132€</div>
+                    </div>
+                    <a href="https://www.trip.com/hotels/amsterdam-hotels-list-297/" target="_blank" class="btn-trip">Reservar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">Oferta</div>
+            <img src="https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=800&q=80" alt="Grecia">
+            <div class="card-body">
+                <div class="dest-name">Atenas: Cuna de la Historia</div>
+                <div class="dest-details">📍 Grecia • Vuelos Low Cost</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Vuelos desde</span>
+                        <div class="price-value">78€</div>
+                    </div>
+                    <a href="https://www.trip.com/vuelos/a-atenas/airfare-ath/" target="_blank" class="btn-trip">Buscar Vuelos</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="logo" style="color:white; justify-content:center;">Trip<span>Voyages</span></a>
-    <p>Las mejores ofertas gestionadas por Trip.com</p>
+    <div class="footer-content">
+        <a href="#" class="footer-logo">Trip<span>Voyages</span></a>
+        <p>Tu guía de confianza para las mejores ofertas en Trip.com</p>
+    </div>
     <div class="disclaimer">
-        *Aviso: Voyages.tours participa en el programa de afiliados de Trip.com. Al hacer clic en los enlaces, podríamos recibir una comisión. Los precios son referenciales.
+        *Aviso: Voyages.tours participa en el programa de afiliados de Trip.com. Al hacer clic en los enlaces y realizar una reserva, podríamos recibir una comisión sin costo adicional para usted. Los precios son referenciales y están sujetos a disponibilidad en la plataforma oficial de Trip.com.
     </div>
 </footer>
 
