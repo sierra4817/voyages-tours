@@ -3,196 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CÓDIGO ALFA | El Despertar del Líder</title>
+    <title>Voyages.tours | Ofertas Exclusivas en Trip.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #050505;
-            --card: #0d0d0d;
-            --gold: #c5a059; 
-            --gold-dark: #8e6d31;
-            --text: #ffffff;
-            --text-muted: #888888;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --trip-blue: #0066ff; --trip-orange: #ff9900; --bg: #f5f7fa; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: var(--bg); color: #333; scroll-behavior: smooth; }
         
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        /* Header estilo Trip.com */
+        header { background: white; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 26px; font-weight: 800; color: var(--trip-blue); text-decoration: none; display: flex; align-items: center; gap: 5px; }
+        .logo span { color: var(--trip-orange); }
+        .nav-links a { text-decoration: none; color: #444; font-weight: 500; margin-left: 20px; font-size: 14px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--trip-blue); }
 
-        /* Fondo con textura sutil */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #050505 70%);
-            z-index: -1;
+        /* Banner Principal */
+        .hero { 
+            height: 45vh;
+            background: linear-gradient(rgba(0,102,255,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
+        .hero h1 { font-size: 42px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 2px 15px rgba(0,0,0,0.3); }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+        .section-info { margin-bottom: 30px; }
+        .section-info h2 { font-size: 28px; color: #111; margin-bottom: 10px; }
+        .section-info p { color: #666; font-size: 16px; }
 
-        /* HEADER & LOGO */
-        header { text-align: center; margin-bottom: 60px; }
-        .logo { 
-            width: 120px; 
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.2));
-        }
-
-        /* MAIN CONTENT */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .book-section { text-align: center; position: relative; }
-        .book-mockup {
-            width: 100%;
-            max-width: 380px;
-            filter: drop-shadow(20px 20px 50px rgba(0,0,0,0.8));
-            transition: transform 0.5s ease;
-        }
-        .book-mockup:hover { transform: translateY(-10px) rotate(-1deg); }
-
-        /* TEXTO Y FORMULARIO */
-        .content-section h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-weight: 900;
-            letter-spacing: -2px;
-        }
-        .content-section h1 span { color: var(--gold); }
+        /* Grid de Ofertas */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: 0.3s; border: 1px solid #eee; position: relative; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
         
-        .description {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            border-left: 2px solid var(--gold);
-            padding-left: 20px;
-        }
-
-        .optin-card {
-            background: var(--card);
-            padding: 40px;
-            border-radius: 4px;
-            border: 1px solid #1a1a1a;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .optin-card h3 { margin-bottom: 25px; font-weight: 400; letter-spacing: 1px; }
-
-        input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: #000;
-            border: 1px solid #222;
-            color: #fff;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        input:focus { border-color: var(--gold); outline: none; }
-
-        .btn-submit {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(45deg, var(--gold-dark), var(--gold));
-            color: #000;
-            border: none;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-submit:hover { transform: scale(1.02); filter: brightness(1.1); }
-
-        /* FOOTER & LEGAL */
-        footer {
-            margin-top: 100px;
-            padding: 40px 0;
-            border-top: 1px solid #111;
-            text-align: center;
-        }
-        .legal-links { margin-bottom: 20px; }
-        .legal-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.8rem;
-            margin: 0 15px;
-            transition: 0.3s;
-        }
-        .legal-links a:hover { color: var(--gold); }
+        .badge { position: absolute; top: 15px; left: 15px; background: var(--trip-orange); color: white; padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         
-        .copyright { font-size: 0.75rem; color: #444; margin-top: 20px; text-transform: uppercase; }
+        .card-body { padding: 20px; }
+        .dest-name { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 8px; }
+        .dest-details { font-size: 13px; color: #777; margin-bottom: 15px; display: flex; align-items: center; gap: 5px; }
+        
+        .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 15px; }
+        .price-label { font-size: 12px; color: #888; display: block; }
+        .price-value { font-size: 24px; font-weight: 800; color: var(--trip-blue); }
+        
+        .btn-trip { background: var(--trip-blue); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; }
+        .btn-trip:hover { background: #0052cc; box-shadow: 0 4px 10px rgba(0,102,255,0.3); }
 
-        /* RESPONSIVE */
-        @media (max-width: 850px) {
-            .main-grid { grid-template-columns: 1fr; }
-            .content-section { order: 1; text-align: center; }
-            .book-section { order: 2; }
-            .content-section h1 { font-size: 2.5rem; }
-            .description { border-left: none; border-top: 2px solid var(--gold); padding: 20px 0 0 0; }
-        }
+        /* Footer */
+        footer { background: #002b5c; color: white; padding: 60px 5% 30px; margin-top: 60px; }
+        .footer-content { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; margin-bottom: 20px; }
+        .footer-logo { font-size: 24px; font-weight: 800; margin-bottom: 15px; display: block; text-decoration: none; color: white; }
+        .footer-logo span { color: var(--trip-orange); }
+        .disclaimer { font-size: 12px; color: #aaa; max-width: 700px; margin: auto; line-height: 1.5; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <img src="https://i.ibb.co/mD8mK0z6/image.png" alt="Código Alfa Logo" class="logo">
-        </header>
+<header>
+    <a href="#" class="logo">Trip<span>Voyages</span></a>
+    <div class="nav-links">
+        <a href="https://www.trip.com/hotels/" target="_blank">Hoteles</a>
+        <a href="https://www.trip.com/flights/" target="_blank">Vuelos</a>
+        <a href="https://www.trip.com/trains/" target="_blank">Trenes</a>
+        <a href="https://www.trip.com/sale/w/2348/global-deals.html" target="_blank" style="color: var(--trip-orange);">Ofertas Flash</a>
+    </div>
+</header>
 
-        <main class="main-grid">
-            <section class="book-section">
-                <img src="https://i.ibb.co/qR8XFzD0/image.png" alt="Código Alfa Libro" class="book-mockup">
-            </section>
+<section class="hero">
+    <h1>Las Mejores Ofertas de Trip.com</h1>
+    <p>Reserva con confianza y obtén Trip Coins en cada viaje</p>
+</section>
 
-            <section class="content-section">
-                <h1>CÓDIGO<br><span>ALFA</span></h1>
-                <p class="description">
-                    Domina el poder oculto de los hombres que lo tienen todo. 
-                    Elimina la debilidad y despierta al líder magnético que intimida 
-                    a la competencia y atrae por instinto.
-                </p>
-
-                <div class="optin-card">
-                    <h3>RECLAMAR ACCESO VIP</h3>
-                    <form action="#" method="POST">
-                        <input type="text" name="name" placeholder="Tu nombre" required>
-                        <input type="email" name="email" placeholder="Tu correo principal" required>
-                        <button type="submit" class="btn-submit">Descargar Manual</button>
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="legal-links">
-                <a href="#privacidad">Política de Privacidad</a>
-                <a href="#terminos">Términos de Uso</a>
-                <a href="#descargo">Descargo de Responsabilidad</a>
-            </div>
-            
-            <div style="max-width: 700px; margin: 0 auto; color: #333; font-size: 11px; line-height: 1.2;">
-                <p><strong>Privacidad:</strong> Tus datos están protegidos bajo protocolos de alta seguridad y solo serán utilizados para enviarte el material solicitado y actualizaciones exclusivas de Código Alfa.</p>
-            </div>
-
-            <p class="copyright">© <span id="year"></span> CÓDIGO ALFA - TODOS LOS DERECHOS RESERVADOS</p>
-            <p style="color: #444; font-size: 10px; margin-top: 10px;">Contacto: codigo.alfa2.3@gmail.com</p>
-        </footer>
+<div class="container">
+    <div class="section-info">
+        <h2>Destinos Recomendados en Europa</h2>
+        <p>Precios reales verificados para estancias de temporada 2026</p>
     </div>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <div class="grid">
+        <div class="card">
+            <div class="badge">Mejor Precio</div>
+            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Madrid">
+            <div class="card-body">
+                <div class="dest-name">Madrid: Cultura y Gastronomía</div>
+                <div class="dest-details">📍 España • Hoteles en Centro Ciudad</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Desde</span>
+                        <div class="price-value">89€ <small style="font-size: 12px;">/noche</small></div>
+                    </div>
+                    <a href="https://www.trip.com/hotels/madrid-hotels-list-212/" target="_blank" class="btn-trip">Reservar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">Top Destino</div>
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="Londres">
+            <div class="card-body">
+                <div class="dest-name">Londres: Escapada Urbana</div>
+                <div class="dest-details">📍 Reino Unido • Vuelos + Hotel</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Paquete desde</span>
+                        <div class="price-value">425€</div>
+                    </div>
+                    <a href="https://www.trip.com/vuelos/a-londres/airfare-lon/" target="_blank" class="btn-trip">Ver Oferta</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Roma">
+            <div class="card-body">
+                <div class="dest-name">Roma: El Coliseo Eterno</div>
+                <div class="dest-details">📍 Italia • Desayuno Incluido</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Noche desde</span>
+                        <div class="price-value">110€</div>
+                    </div>
+                    <a href="https://www.trip.com/hotels/rome-hotels-list-316/" target="_blank" class="btn-trip">Reservar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">Recomendado</div>
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="París">
+            <div class="card-body">
+                <div class="dest-name">París: Torre Eiffel y Sena</div>
+                <div class="dest-details">📍 Francia • Escapada Romántica</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Desde</span>
+                        <div class="price-value">145€</div>
+                    </div>
+                    <a href="https://www.trip.com/hotels/paris-hotels-list-192/" target="_blank" class="btn-trip">Ver Hoteles</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=800&q=80" alt="Amsterdam">
+            <div class="card-body">
+                <div class="dest-name">Ámsterdam: Canales Mágicos</div>
+                <div class="dest-details">📍 Países Bajos • Hoteles con Encanto</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Noche desde</span>
+                        <div class="price-value">132€</div>
+                    </div>
+                    <a href="https://www.trip.com/hotels/amsterdam-hotels-list-297/" target="_blank" class="btn-trip">Reservar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">Oferta</div>
+            <img src="https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=800&q=80" alt="Grecia">
+            <div class="card-body">
+                <div class="dest-name">Atenas: Cuna de la Historia</div>
+                <div class="dest-details">📍 Grecia • Vuelos Low Cost</div>
+                <div class="price-row">
+                    <div>
+                        <span class="price-label">Vuelos desde</span>
+                        <div class="price-value">78€</div>
+                    </div>
+                    <a href="https://www.trip.com/vuelos/a-atenas/airfare-ath/" target="_blank" class="btn-trip">Buscar Vuelos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <a href="#" class="footer-logo">Trip<span>Voyages</span></a>
+        <p>Tu guía de confianza para las mejores ofertas en Trip.com</p>
+    </div>
+    <div class="disclaimer">
+        *Aviso: Voyages.tours participa en el programa de afiliados de Trip.com. Al hacer clic en los enlaces y realizar una reserva, podríamos recibir una comisión sin costo adicional para usted. Los precios son referenciales y están sujetos a disponibilidad en la plataforma oficial de Trip.com.
+    </div>
+</footer>
+
 </body>
 </html>
