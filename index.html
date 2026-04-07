@@ -3,56 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages.tours - Explora el mundo</title>
+    <title>Voyages.tours - Explora el mundo profesionalmente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: #333; background-color: #f8f9fa; }
-        header { background: #004488; color: white; padding: 20px; text-align: center; }
-        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; background: #003366; margin: 0; padding: 10px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; }
-        .hero { background: #e9ecef; padding: 60px 20px; text-align: center; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
-        footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        .btn { background: #ffaa00; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; border-radius: 5px; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; color: #333; background-color: #fff; scroll-behavior: smooth; }
+        
+        /* Encabezado y Navegación Profundo */
+        header { background: #fff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: 600; color: #004488; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; }
+        nav a { text-decoration: none; color: #555; font-weight: 400; transition: color 0.3s; }
+        nav a:hover { color: #ffaa00; }
+
+        /* Sección Hero con Imagen de Fondo Profesional */
+        .hero { 
+            background-image: linear-gradient(rgba(0,68,136,0.6), rgba(0,68,136,0.8)), 
+                              url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover; background-position: center; color: white; 
+            padding: 100px 20px; text-align: center; margin-bottom: 30px; 
+        }
+        .hero h2 { font-size: 48px; font-weight: 600; margin-bottom: 10px; }
+        .hero p { font-size: 18px; font-weight: 300; margin-top: 0; }
+
+        /* Contenedor y Diseño de Destinos */
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        h2.section-title { text-align: center; color: #004488; margin-bottom: 40px; font-size: 32px; font-weight: 600; }
+        .destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        /* Tarjetas Profesionales con Imágenes */
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 20px; text-align: center; }
+        .card-content h3 { color: #004488; margin-top: 0; margin-bottom: 10px; font-weight: 600; }
+        .card-content p { color: #666; font-weight: 300; font-size: 14px; }
+        
+        /* Sección Sobre Nosotros y Contacto Modernos */
+        .section-light { background-color: #f8f9fa; padding: 60px 0; margin-top: 50px; }
+        form { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); max-width: 600px; margin: auto; }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif; font-weight: 300; }
+        input:focus, textarea:focus { border-color: #004488; outline: none; }
+        .btn { background: #ffaa00; color: #000; border: none; padding: 12px 24px; cursor: pointer; font-weight: 600; border-radius: 6px; font-family: 'Poppins', sans-serif; }
+        .btn:hover { background: #e69900; }
+        
+        /* Footer Profesional */
+        footer { background: #002244; color: white; text-align: center; padding: 40px 20px; margin-top: 50px; font-weight: 300; font-size: 14px; }
+        footer a { color: #ffaa00; text-decoration: none; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Voyages.tours</h1>
+        <div class="logo">Voyages.tours</div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#featured">Destinos</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#featured">Destinos</a></li>
-            <li><a href="#about">Nosotros</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
-    </nav>
+    
     <div class="hero">
         <h2>Tu próxima aventura comienza aquí</h2>
-        <p>Descubre los rincones más increíbles del planeta.</p>
+        <p>Descubre los rincones más increíbles del planeta con nosotros.</p>
     </div>
+    
     <div class="container">
-        <h2 id="featured">Destinos Destacados</h2>
+        <h2 id="featured" class="section-title">Destinos Destacados</h2>
         <div class="destinos">
-            <div class="card"><h3>París, Francia</h3><p>La ciudad de la luz te espera.</p></div>
-            <div class="card"><h3>Tokio, Japón</h3><p>Tradición y futuro en un solo lugar.</p></div>
-            <div class="card"><h3>Nueva York, USA</h3><p>La ciudad que nunca duerme.</p></div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="París, Francia">
+                <div class="card-content">
+                    <h3>París, Francia</h3>
+                    <p>La ciudad de la luz te espera con su encanto atemporal y monumentos icónicos.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1540959733332-e94e1b38f4d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tokio, Japón">
+                <div class="card-content">
+                    <h3>Tokio, Japón</h3>
+                    <p>Sumérgete en la mezcla perfecta de tradición milenaria y tecnología futurista.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nueva York, USA">
+                <div class="card-content">
+                    <h3>Nueva York, USA</h3>
+                    <p>Explora la ciudad que nunca duerme y déjate sorprender por su energía inigualable.</p>
+                </div>
+            </div>
         </div>
-        <h2 id="about" style="margin-top:40px;">Sobre Nosotros</h2>
-        <p>En Voyages.tours nos apasiona viajar. Somos expertos en crear experiencias inolvidables adaptadas a tu presupuesto y sueños.</p>
-        <h2 id="contact">Contáctanos</h2>
+    </div>
+    
+    <div id="about" class="section-light">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <p style="text-align: center; max-width: 800px; margin: auto; font-weight: 300; line-height: 1.8;">
+                En Voyages.tours nos apasiona viajar. Somos expertos en crear experiencias inolvidables adaptadas a tu presupuesto y sueños. Desde escapadas románticas hasta aventuras épicas, estamos aquí para hacer realidad tu próximo viaje.
+            </p>
+        </div>
+    </div>
+    
+    <div id="contact" class="container" style="margin-top: 50px;">
+        <h2 class="section-title">Contáctanos</h2>
         <form>
-            <input type="text" placeholder="Tu Nombre">
-            <input type="email" placeholder="Tu Email">
-            <textarea placeholder="Tu Mensaje" rows="4"></textarea>
-            <button type="button" class="btn" onclick="alert('Mensaje enviado')">Enviar Consulta</button>
+            <input type="text" placeholder="Tu Nombre" required>
+            <input type="email" placeholder="Tu Email" required>
+            <textarea placeholder="¿A dónde te gustaría viajar? Cuéntanos tus planes..." rows="5" required></textarea>
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="button" class="btn" onclick="alert('Gracias por tu consulta. ¡Te contactaremos pronto!')">Enviar Consulta Profesional</button>
+            </div>
         </form>
     </div>
+    
     <footer>
-        <p>&copy; 2026 Voyages.tours - Sierra4817</p>
+        <p>&copy; 2026 Voyages.tours - sierra4817</p>
+        <p>Tu viaje perfecto, a un clic de distancia.</p>
     </footer>
 </body>
 </html>
