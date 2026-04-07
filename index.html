@@ -24,18 +24,18 @@
         .search-container {
             background: white; max-width: 900px; margin: auto; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-        .tabs { display: flex; background: #333; border-bottom: 1px solid #eee; overflow-x: auto; }
-        .tab { padding: 15px 25px; cursor: pointer; color: white; font-weight: 500; text-decoration: none; font-size: 14px; white-space: nowrap; transition: 0.3s; }
+        .tabs { display: flex; background: #f8f9fb; border-bottom: 1px solid #eee; overflow-x: auto; }
+        .tab { padding: 15px 25px; cursor: pointer; color: #555; font-weight: 500; text-decoration: none; font-size: 14px; white-space: nowrap; }
         .tab.active { background: white; color: var(--trip-blue); border-bottom: 3px solid var(--trip-blue); }
-        .tab:hover:not(.active) { background: #444; color: white; }
+        .tab:hover { color: var(--trip-blue); }
 
         .search-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; padding: 20px; align-items: end; }
         .input-group { text-align: left; }
         .input-group label { display: block; font-size: 12px; color: #888; margin-bottom: 5px; }
         .input-group input, .input-group select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
         
-        /* BOTÓN BUSCAR TEXTO BLANCO */
-        .btn-search { background: var(--trip-blue); color: white !important; border: none; padding: 12px; border-radius: 4px; font-weight: 700; cursor: pointer; text-decoration: none; display: block; text-align: center; }
+        /* BOTÓN SEARCH TEXTO BLANCO */
+        .btn-search { background: var(--trip-blue); color: white; border: none; padding: 12px; border-radius: 4px; font-weight: 700; cursor: pointer; text-decoration: none; display: block; text-align: center; }
 
         /* Grid */
         .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
@@ -52,7 +52,7 @@
         .price-value { font-size: 24px; font-weight: 800; color: var(--trip-blue); }
         
         /* BOTONES TARJETAS TEXTO BLANCO */
-        .btn-trip { background: var(--trip-blue); color: white !important; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; text-align: center; }
+        .btn-trip { background: var(--trip-blue); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; text-align: center; display: inline-block; }
 
         footer { background: #002b5c; color: white; padding: 40px 5%; text-align: center; margin-top: 60px; }
         .disclaimer { font-size: 11px; color: #aaa; margin-top: 20px; line-height: 1.5; }
