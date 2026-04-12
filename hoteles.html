@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoteles - Voyages.Tours</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="trip-header">
         <div class="header-container">
-            <a href="index.html" class="logo-trip">
-                <span class="logo-v">V</span>
-                Voyages.Tours
-            </a>
+            <a href="index.html" class="logo-trip"><div class="logo-v">V</div> Voyages.Tours</a>
             <nav class="menu-icons">
                 <a href="hoteles.html" class="menu-item active"><span>🏨 Hoteles</span></a>
                 <a href="vuelos.html" class="menu-item"><span>✈️ Vuelos</span></a>
@@ -26,101 +20,21 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Hoteles seleccionados para ti</h1>
-                <p>Descuentos exclusivos en las mejores cadenas hoteleras</p>
-
-                <div class="search-box">
-                    <input type="text" class="search-field" placeholder="¿Dónde quieres hospedarte?">
-                    <input type="text" class="search-field" placeholder="Check-in → Check-out">
-                    <input type="text" class="search-field" placeholder="2 adultos, 1 habitación">
-                    <button class="search-btn">🔍 Buscar</button>
-                </div>
+        <section class="hero" style="background: linear-gradient(135deg, #0055E8 0%, #003399 100%);">
+            <div class="hero-content animate-fadeInUp">
+                <h1>Hoteles Exclusivos</h1>
+                <p>Descansa en los mejores alojamientos del mundo con cancelación gratuita.</p>
             </div>
         </section>
 
-        <div class="section-header">
-            <h2 class="section-title">🏨 Mejores Ofertas de Hoteles</h2>
-            <p class="section-subtitle">Descubre alojamientos con precios exclusivos</p>
-        </div>
-
         <div class="hotels-grid">
-            <div class="hotel-card">
-                <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Luxury Resort" loading="lazy">
-                </div>
+            <div class="hotel-card animate-fadeInUp">
+                <div class="hotel-image"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800" alt="Hotel"></div>
                 <div class="card-content">
-                    <span class="badge badge-blue">5 Estrellas</span>
-                    <h3>Luxury Resort Barcelona</h3>
-                    <p>5 estrellas · Piscina · Spa · Primera línea de playa</p>
-                    <p class="price-value">120€</p>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Reservar Ahora</a>
-                </div>
-            </div>
-
-            <div class="hotel-card">
-                <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5?w=800&q=80" alt="Boutique Hotel Madrid" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <span class="badge badge-orange">Boutique</span>
-                    <h3>Boutique Hotel Madrid</h3>
-                    <p>4 estrellas · Centro histórico · Terraza panorámica</p>
-                    <p class="price-value">95€</p>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Reservar Ahora</a>
-                </div>
-            </div>
-
-            <div class="hotel-card">
-                <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80" alt="Hotel Playa Costa" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <span class="badge badge-green">Oferta</span>
-                    <h3>Hotel Playa Costa del Sol</h3>
-                    <p>4 estrellas · Todo incluido · Actividades acuáticas</p>
-                    <p class="price-value">85€</p>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Reservar Ahora</a>
-                </div>
-            </div>
-
-            <div class="hotel-card">
-                <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80" alt="Hotel Tropical" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <span class="badge badge-blue">Todo Incluido</span>
-                    <h3>Grand Hotel Tropical</h3>
-                    <p>5 estrellas · Resort · Golf · Spa de lujo</p>
-                    <p class="price-value">180€</p>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Reservar Ahora</a>
-                </div>
-            </div>
-
-            <div class="hotel-card">
-                <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80" alt="Hotel Mountain View" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <span class="badge badge-orange">Montaña</span>
-                    <h3>Mountain View Resort</h3>
-                    <p>4 estrellas · Vistas panorámicas · Ski · Chimenea</p>
-                    <p class="price-value">110€</p>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Reservar Ahora</a>
-                </div>
-            </div>
-
-            <div class="hotel-card">
-                <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80" alt="Urban Hotel" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <span class="badge badge-blue">Negocios</span>
-                    <h3>Urban City Hotel</h3>
-                    <p>4 estrellas · Centro financiero · Gym 24h · Coworking</p>
-                    <p class="price-value">75€</p>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Reservar Ahora</a>
+                    <h3>Resorts de Lujo</h3>
+                    <p>Encuentra tu paraíso privado con todo incluido.</p>
+                    <div class="price-value">120€</div>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Hoteles</a>
                 </div>
             </div>
         </div>
@@ -130,12 +44,12 @@
         <div class="footer-content">
             <div class="footer-logo">Voyages.Tours</div>
             <div class="footer-links">
-                <a href="hoteles.html">Hoteles</a>
-                <a href="vuelos.html">Vuelos</a>
-                <a href="tours.html">Tours</a>
-                <a href="ia-assistant.html">IA Assistant</a>
+                <a href="hoteles.html">🏨 Hoteles</a>
+                <a href="vuelos.html">✈️ Vuelos</a>
+                <a href="tours.html">🚂 Tours</a>
+                <a href="ia-assistant.html">🤖 Asistente IA</a>
             </div>
-            <p>&copy; 2025 Voyages.Tours - Afiliado de Trip.com | Todos los derechos reservados</p>
+            <p>© 2025 Voyages.Tours - Afiliado Oficial de Trip.com | Todos los derechos reservados</p>
         </div>
     </footer>
 </body>
