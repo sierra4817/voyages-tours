@@ -4,90 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IA Assistant - Voyages.Tours</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="trip-header">
         <div class="header-container">
-            <a href="index.html" class="logo-trip"><span class="logo-v">V</span> Voyages.Tours</a>
+            <a href="index.html" class="logo-trip">
+                <div class="logo-v">V</div>
+                Voyages.Tours
+            </a>
             <nav class="menu-icons">
-                <a href="hoteles.html" class="menu-item">🏨 Hoteles</a>
-                <a href="vuelos.html" class="menu-item">✈️ Vuelos</a>
-                <a href="tours.html" class="menu-item">🚂 Tours</a>
-                <a href="ia-assistant.html" class="menu-item active">🤖 IA</a>
+                <a href="hoteles.html" class="menu-item"><span>🏨 Hoteles</span></a>
+                <a href="vuelos.html" class="menu-item"><span>✈️ Vuelos</span></a>
+                <a href="tours.html" class="menu-item"><span>🚂 Tours</span></a>
+                <a href="ia-assistant.html" class="menu-item active"><span>🤖 IA</span></a>
             </nav>
         </div>
     </header>
 
     <main>
         <section class="hero-gradient">
-            <div class="hero-content">
-                <h1>Planificador IA</h1>
-                <p>Diseñamos tu ruta de viaje perfecta con inteligencia artificial</p>
-                <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book-blue">Probar Asistente IA</a>
+            <div class="hero-content animate-fadeInUp">
+                <h1>Tu Asistente de Viajes IA</h1>
+                <p>Diseñamos tu ruta de viaje perfecta en segundos utilizando la tecnología de inteligencia artificial más avanzada.</p>
+                <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book-blue">Probar Planificador IA Gratis</a>
             </div>
         </section>
 
-        <h2 class="section-title">🤖 Características del Asistente</h2>
-        <p class="section-subtitle">Descubre cómo la IA puede mejorar tu experiencia de viaje</p>
+        <div class="section-header animate-fadeInUp">
+            <h2 class="section-title">🤖 Características del Asistente</h2>
+            <p class="section-subtitle">Descubre cómo la tecnología puede transformar tu próxima aventura</p>
+        </div>
 
         <div class="hotels-grid">
-            <!-- Feature 1 -->
-            <div class="hotel-card">
+            
+            <div class="hotel-card animate-fadeInUp">
                 <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80" alt="IA Planificación">
+                    <span class="badge badge-blue" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Inteligente</span>
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" alt="IA Planificación" loading="lazy">
                 </div>
                 <div class="card-content">
                     <h3>Planificación Inteligente</h3>
-                    <p>La IA analiza tus preferencias y crea itinerarios personalizados en segundos</p>
-                    <p class="price-value">Gratis</p>
+                    <p>Nuestra IA analiza miles de datos para crear itinerarios personalizados que se ajustan a tus gustos exactos.</p>
+                    <div class="price-value">GRATIS</div>
                     <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Probar Ahora</a>
                 </div>
             </div>
 
-            <!-- Feature 2 -->
-            <div class="hotel-card">
+            <div class="hotel-card animate-fadeInUp">
                 <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80" alt="Recomendaciones IA">
+                    <span class="badge badge-orange" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Premium</span>
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Recomendaciones IA" loading="lazy">
                 </div>
                 <div class="card-content">
-                    <h3>Recomendaciones Personalizadas</h3>
-                    <p>Descubre restaurantes, actividades y lugares que se ajustan a tu estilo</p>
-                    <p class="price-value">Gratis</p>
+                    <h3>Recomendaciones Pro</h3>
+                    <p>Descubre joyas ocultas, restaurantes locales y actividades exclusivas recomendadas por nuestra red inteligente.</p>
+                    <div class="price-value">GRATIS</div>
                     <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Explorar</a>
                 </div>
             </div>
 
-            <!-- Feature 3 -->
-            <div class="hotel-card">
+            <div class="hotel-card animate-fadeInUp">
                 <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="Ahorro Inteligente">
+                    <span class="badge badge-green" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Ahorro</span>
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Ahorro Inteligente" loading="lazy">
                 </div>
                 <div class="card-content">
                     <h3>Alertas de Precios IA</h3>
-                    <p>Predicción inteligente del mejor momento para reservar vuelos y hoteles</p>
-                    <p class="price-value">Gratis</p>
+                    <p>Predecimos cuándo bajarán los precios de tus vuelos y hoteles favoritos para que ahorres en cada reserva.</p>
+                    <div class="price-value">GRATIS</div>
                     <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Activar Alertas</a>
                 </div>
             </div>
 
-            <!-- Feature 4 -->
-            <div class="hotel-card">
+            <div class="hotel-card animate-fadeInUp">
                 <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Traducción IA">
+                    <span class="badge badge-blue" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Global</span>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Traducción IA" loading="lazy">
                 </div>
                 <div class="card-content">
-                    <h3>Traducción en Tiempo Real</h3>
-                    <p>Comunícate en cualquier idioma durante tus viajes sin barreras</p>
-                    <p class="price-value">Gratis</p>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Probar</a>
+                    <h3>Traducción Global</h3>
+                    <p>Comunícate sin fronteras. Nuestra IA te ayuda a entenderte con los locales en más de 100 idiomas diferentes.</p>
+                    <div class="price-value">GRATIS</div>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Probar Traductor</a>
                 </div>
             </div>
+
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Voyages.Tours - Afiliado de Trip.com | Todos los derechos reservados</p>
+        <div class="footer-content">
+            <div class="footer-logo">Voyages.Tours</div>
+            <div class="footer-links">
+                <a href="hoteles.html">Hoteles</a>
+                <a href="vuelos.html">Vuelos</a>
+                <a href="tours.html">Tours</a>
+                <a href="ia-assistant.html">IA Assistant</a>
+            </div>
+            <p>&copy; 2025 Voyages.Tours - Afiliado Oficial de Trip.com | Todos los derechos reservados</p>
+        </div>
     </footer>
 </body>
 </html>
