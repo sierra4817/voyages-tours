@@ -3,176 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages.tours | Ofertas Premium 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --blue: #0066ff; --orange: #ff9900; --bg: #f4f7f9; }
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--bg); color: #1a1a1a; overflow-x: hidden; }
-        
-        header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,.1); }
-        .logo { font-size: 28px; font-weight: 900; color: var(--blue); text-decoration: none; }
-        .logo span { color: var(--orange); }
-
-        .hero { 
-            height: 60vh; 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 20px;
-        }
-        .hero h1 { font-size: clamp(30px, 5vw, 55px); margin: 0; font-weight: 900; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        
-        .container { max-width: 1300px; margin: auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-
-        .card { background: #fff; border-radius: 15px; overflow: hidden; transition: .3s; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative; border: 1px solid #eee; }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 240px; object-fit: cover; display: block; background: #eee; }
-
-        .badge { position: absolute; top: 15px; left: 15px; background: var(--orange); color: #fff; padding: 5px 12px; border-radius: 6px; font-weight: 900; font-size: 12px; z-index: 5; }
-
-        .card-body { padding: 20px; }
-        .card-body h3 { margin: 0 0 10px 0; font-size: 22px; color: #002b5c; }
-        .card-body p { color: #666; font-size: 14px; margin-bottom: 20px; }
-
-        .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; }
-        .price { font-size: 26px; font-weight: 900; color: var(--blue); }
-
-        .btn { 
-            background: var(--blue); color: #fff !important; padding: 10px 20px; border-radius: 8px; 
-            text-decoration: none; font-weight: 700; transition: .3s; 
-        }
-        .btn:hover { background: #0044cc; }
-
-        footer { background: #001a33; color: #fff; text-align: center; padding: 60px 20px; margin-top: 80px; }
-        .disclaimer { font-size: 12px; color: #88a0bc; max-width: 800px; margin: 20px auto 0; line-height: 1.6; }
-    </style>
+    <title>Voyages.Tours - Tu próximo viaje empieza aquí</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="trip-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-trip"><span class="logo-v">V</span> Voyages.Tours</a>
+            <nav class="menu-icons">
+                <a href="hoteles.html" class="menu-item">🏨 Hoteles</a>
+                <a href="vuelos.html" class="menu-item">✈️ Vuelos</a>
+                <a href="tours.html" class="menu-item">🚂 Tours</a>
+                <a href="ia-assistant.html" class="menu-item">🤖 IA</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <a href="#" class="logo">Voyages<span>.tours</span></a>
-</header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Tu próximo viaje empieza aquí</h1>
+                <p>Descubre destinos increíbles con la garantía de Trip.com</p>
+                <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book-blue">Explorar Ofertas</a>
+            </div>
+        </section>
 
-<section class="hero">
-    <h1>VIAJA MEJOR. PAGA MENOS.</h1>
-    <p>Ofertas exclusivas en hoteles premium de todo el mundo.</p>
-</section>
+        <h2 class="section-title">✨ Destinos Tendencia 2025</h2>
+        <p class="section-subtitle">Los 12 destinos más populares para tu próxima aventura</p>
 
-<div class="container">
-    <div class="grid">
-        <div class="card">
-            <div class="badge">ESPAÑA</div>
-            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80" alt="Madrid">
-            <div class="card-body">
-                <h3>Madrid</h3>
-                <p>Gastronomía y cultura de élite en el centro.</p>
-                <div class="price-row">
-                    <div class="price">89€</div>
-                    <a href="https://www.trip.com/hotels/madrid-hotels-list-212/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">Reservar</a>
+        <div class="hotels-grid">
+            <!-- Destino 1: París -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80" alt="Torre Eiffel, París">
+                </div>
+                <div class="card-content">
+                    <h3>París, Francia</h3>
+                    <p>La ciudad del amor y la luz</p>
+                    <p class="price-value">Desde 89€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 2: Tokio -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80" alt="Tokio, Japón">
+                </div>
+                <div class="card-content">
+                    <h3>Tokio, Japón</h3>
+                    <p>Tradición y futuro en perfecta armonía</p>
+                    <p class="price-value">Desde 120€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 3: Nueva York -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80" alt="Nueva York, USA">
+                </div>
+                <div class="card-content">
+                    <h3>Nueva York, USA</h3>
+                    <p>La ciudad que nunca duerme</p>
+                    <p class="price-value">Desde 150€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 4: Roma -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80" alt="Coliseo Romano">
+                </div>
+                <div class="card-content">
+                    <h3>Roma, Italia</h3>
+                    <p>La ciudad eterna te espera</p>
+                    <p class="price-value">Desde 85€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 5: Barcelona -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80" alt="Sagrada Familia, Barcelona">
+                </div>
+                <div class="card-content">
+                    <h3>Barcelona, España</h3>
+                    <p>Arte, playa y gastronomía</p>
+                    <p class="price-value">Desde 75€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 6: Bali -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Bali, Indonesia">
+                </div>
+                <div class="card-content">
+                    <h3>Bali, Indonesia</h3>
+                    <p>Paraíso tropical único</p>
+                    <p class="price-value">Desde 45€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 7: Londres -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80" alt="Big Ben, Londres">
+                </div>
+                <div class="card-content">
+                    <h3>Londres, Reino Unido</h3>
+                    <p>Historia y modernidad</p>
+                    <p class="price-value">Desde 110€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 8: Dubái -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" alt="Burj Khalifa, Dubái">
+                </div>
+                <div class="card-content">
+                    <h3>Dubái, EAU</h3>
+                    <p>Lujo y extravagancia</p>
+                    <p class="price-value">Desde 130€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 9: Ámsterdam -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1534351590666-13e3e5d7d0ed?w=800&q=80" alt="Canales de Ámsterdam">
+                </div>
+                <div class="card-content">
+                    <h3>Ámsterdam, Países Bajos</h3>
+                    <p>Canales, cultura y diversión</p>
+                    <p class="price-value">Desde 95€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 10: Santorini -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1613395877344-13d4c79e4284?w=800&q=80" alt="Santorini, Grecia">
+                </div>
+                <div class="card-content">
+                    <h3>Santorini, Grecia</h3>
+                    <p>Puestas de sol inolvidables</p>
+                    <p class="price-value">Desde 140€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 11: Marrakech -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800&q=80" alt="Marrakech, Marruecos">
+                </div>
+                <div class="card-content">
+                    <h3>Marrakech, Marruecos</h3>
+                    <p>Colores, aromas y misterio</p>
+                    <p class="price-value">Desde 55€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <!-- Destino 12: Bangkok -->
+            <div class="hotel-card">
+                <div class="hotel-image">
+                    <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&q=80" alt="Bangkok, Tailandia">
+                </div>
+                <div class="card-content">
+                    <h3>Bangkok, Tailandia</h3>
+                    <p>Templos dorados y street food</p>
+                    <p class="price-value">Desde 35€</p>
+                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
                 </div>
             </div>
         </div>
+    </main>
 
-        <div class="card">
-            <div class="badge">FRANCIA</div>
-            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris">
-            <div class="card-body">
-                <h3>París</h3>
-                <p>La ciudad más icónica y romántica del mundo.</p>
-                <div class="price-row">
-                    <div class="price">145€</div>
-                    <a href="https://www.trip.com/hotels/paris-hotels-list-192/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">Reservar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="badge">ITALIA</div>
-            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80" alt="Roma">
-            <div class="card-body">
-                <h3>Roma</h3>
-                <p>Historia eterna y hoteles con encanto.</p>
-                <div class="price-row">
-                    <div class="price">110€</div>
-                    <a href="https://www.trip.com/hotels/rome-hotels-list-316/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">Reservar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="badge">JAPÓN</div>
-            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80" alt="Tokio">
-            <div class="card-body">
-                <h3>Tokio</h3>
-                <p>Donde el futuro se une con la tradición.</p>
-                <div class="price-row">
-                    <div class="price">115€</div>
-                    <a href="https://www.trip.com/hotels/tokyo-hotels-list-228/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">Reservar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="badge">EAU</div>
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" alt="Dubai">
-            <div class="card-body">
-                <h3>Dubái</h3>
-                <p>Lujo extremo y arquitectura imposible.</p>
-                <div class="price-row">
-                    <div class="price">180€</div>
-                    <a href="https://www.trip.com/hotels/dubai-hotels-list-173/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">Reservar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="badge">USA</div>
-            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80" alt="New York">
-            <div class="card-body">
-                <h3>Nueva York</h3>
-                <p>La energía imparable de la Gran Manzana.</p>
-                <div class="price-row">
-                    <div class="price">220€</div>
-                    <a href="https://www.trip.com/hotels/new-york-hotels-list-2/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">Reservar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="badge">MÉXICO</div>
-            <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=600&q=80" alt="Cancun">
-            <div class="card-body">
-                <h3>Cancún</h3>
-                <p>Paraíso de aguas turquesas y relax.</p>
-                <div class="price-row">
-                    <div class="price">130€</div>
-                    <a href="https://www.trip.com/hotels/cancun-hotels-list-652/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">Reservar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="badge">MALDIVAS</div>
-            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80" alt="Maldives">
-            <div class="card-body">
-                <h3>Maldivas</h3>
-                <p>El santuario de lujo sobre el mar.</p>
-                <div class="price-row">
-                    <div class="price">350€</div>
-                    <a href="https://www.trip.com/hotels/maldives-hotels-list-164/?Allianceid=8047264&SID=304625434" class="btn" target="_blank">Reservar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <div class="logo" style="color:#fff">Voyages<span>.tours</span></div>
-    <p>© 2026 Reservas vía Trip.com</p>
-    <div class="disclaimer">
-        Aviso: <strong>Voyages.tours</strong> es afiliado oficial de Trip.com. Al reservar mediante nuestros enlaces oficiales, obtienes el precio mínimo y nosotros recibimos una pequeña comisión.
-    </div>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 Voyages.Tours - Afiliado de Trip.com | Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>
