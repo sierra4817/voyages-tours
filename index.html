@@ -3,283 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoteles - Voyages.Tours</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Voyages Tours | Viajes con Alma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-blue: #00A8E8;
+            --deep-ocean: #003459;
+            --cloud: #F8F9FA;
+            --text-dark: #2D3436;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cloud);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--sky-blue);
+            padding: 4px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .username { font-size: 26px; font-weight: 800; margin: 0; color: var(--deep-ocean); }
+        .stats { display: flex; justify-content: center; gap: 30px; margin: 20px 0; font-size: 14px; }
+        .stats b { color: var(--sky-blue); font-size: 18px; }
+
+        .reserva-btn {
+            display: inline-block;
+            margin-top: 15px;
+            background: linear-gradient(135deg, var(--sky-blue), var(--deep-ocean));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(0, 168, 232, 0.3);
+        }
+
+        /* GRID TIKTOK STYLE */
+        .section-title { font-family: 'Playfair Display', serif; font-size: 28px; margin: 50px 0 20px; }
+        
+        .travel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            aspect-ratio: 9/16;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .video-card:hover { transform: translateY(-5px); }
+
+        .video-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 10px;
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* PRÓXIMAS RUTAS */
+        .destinos-container {
+            background: var(--deep-ocean);
+            color: white;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .destinos-flex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .destino-pill {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 1px solid var(--sky-blue);
+        }
+
+        /* TESTIMONIOS */
+        .testimonials {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .test-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            text-align: left;
+            border-left: 5px solid var(--sky-blue);
+        }
+
+        .test-card p { font-style: italic; color: #555; }
+        .test-card b { color: var(--deep-ocean); }
+
+        footer { padding: 50px; background: #eee; font-size: 13px; color: #777; }
+
+    </style>
 </head>
 <body>
-    <header class="trip-header">
-        <div class="header-container">
-            <a href="index.html" class="logo-trip">
-                <div class="logo-v">V</div>
-                Voyages.Tours
-            </a>
-            <nav class="menu-icons">
-                <a href="hoteles.html" class="menu-item active"><span>🏨 Hoteles</span></a>
-                <a href="vuelos.html" class="menu-item"><span>✈️ Vuelos</span></a>
-                <a href="tours.html" class="menu-item"><span>🚂 Tours</span></a>
-                <a href="ia-assistant.html" class="menu-item"><span>🤖 IA</span></a>
-            </nav>
+
+    <header>
+        <img src="https://via.placeholder.com/150" alt="Albert" class="profile-pic">
+        <h1 class="username">Albert ✓</h1>
+        <p style="color: var(--sky-blue); font-weight: 600;">@voyages.tours</p>
+        
+        <div class="stats">
+            <span><b>18.8k</b> Seguidores</span>
+            <span><b>13.2k</b> Me gusta</span>
         </div>
+
+        <p style="max-width: 500px; margin: 0 auto 20px; color: #666;">
+            🇮🇹 🇪🇸 🇺🇸 🇪🇺 Viajes con alma y paisajes que inspiran ✨<br>
+            Te enseño los <i>Secret Spots</i> de Europa y el mundo.
+        </p>
+
+        <a href="#" class="reserva-btn">Reserva tu Guía (10% OFF)</a>
     </header>
 
-    <main>
-        <section class="hero" style="background: linear-gradient(135deg, #0055E8 0%, #002D80 100%);">
-            <div class="hero-content animate-fadeInUp">
-                <h1>Hoteles y Resorts Exclusivos</h1>
-                <p>Encuentra el alojamiento perfecto con las mejores tarifas y cancelación gratuita.</p>
+    <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 10px;">
+        <h2 class="section-title">Explora mis Aventuras</h2>
+        <div class="travel-grid">
+            <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1527668752968-14dc70a27451?q=80&w=400');">
+                <div class="overlay">Ginebra, Suiza 🇨🇭</div>
             </div>
-        </section>
-
-        <div class="hotels-grid">
-            
-            <div class="hotel-card animate-fadeInUp">
-                <div class="hotel-image">
-                    <span class="badge badge-orange" style="position: absolute; top: 15px; left: 15px; z-index: 2;">5 Estrellas</span>
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Resort Maldivas">
-                </div>
-                <div class="card-content">
-                    <h3>Maldives Luxury Resort</h3>
-                    <p>Villas sobre el agua con vistas infinitas al océano Índico.</p>
-                    <div class="price-value">320€</div>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Disponibilidad</a>
-                </div>
+            <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1541079172217-247507353a1e?q=80&w=400');">
+                <div class="overlay">Duomo Florencia 🇮🇹</div>
             </div>
-
-            <div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-blue" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Larga Distancia</span>
-        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800" alt="Maldivas">
-    </div>
-    <div class="card-content">
-        <h3>Madrid ✈️ Malé, Maldivas</h3>
-        <p>Vuela al paraíso. Conexiones cómodas y las mejores aerolíneas.</p>
-        <div class="price-value">540€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Buscar Vuelos</a>
-    </div>
-</div>
-
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-orange" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Oferta</span>
-        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800" alt="Estambul">
-    </div>
-    <div class="card-content">
-        <h3>Barcelona ✈️ Estambul</h3>
-        <p>Explora el puente entre Europa y Asia con precios increíbles.</p>
-        <div class="price-value">145€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Buscar Vuelos</a>
-    </div>
-</div>
-
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <img src="https://images.unsplash.com/photo-1521024221340-efe7d7fa239b?w=800" alt="Islandia">
-    </div>
-    <div class="card-content">
-        <h3>Madrid ✈️ Reikiavik</h3>
-        <p>Tu aventura entre glaciares y auroras boreales comienza aquí.</p>
-        <div class="price-value">180€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Buscar Vuelos</a>
-    </div>
-</div>
-
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-green" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Top Ventas</span>
-        <img src="https://images.unsplash.com/photo-1512813583141-b921d016e146?w=800" alt="México">
-    </div>
-    <div class="card-content">
-        <h3>Barcelona ✈️ Cancún</h3>
-        <p>Sol, playa y cultura maya a un solo clic de distancia.</p>
-        <div class="price-value">420€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Buscar Vuelos</a>
-    </div>
-</div>
-
-
- <div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <img src="https://images.unsplash.com/photo-1506929113675-4ea30eeaf247?w=800" alt="Fjords Noruega">
-    </div>
-    <div class="card-content">
-        <h3>Crucero por los Fiordos</h3>
-        <p>Navega entre montañas gigantes y cascadas cristalinas.</p>
-        <div class="price-value">890€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Itinerario</a>
-    </div>
-</div>
-
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-green" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Historia</span>
-        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=800" alt="Pirámides Egipto">
-    </div>
-    <div class="card-content">
-        <h3>Egipto: Tierra de Faraones</h3>
-        <p>Visita las Pirámides de Giza y navega por el río Nilo.</p>
-        <div class="price-value">450€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Packs</a>
-    </div>
-</div>
-
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800" alt="Sidney">
-    </div>
-    <div class="card-content">
-        <h3>Sídney: El Corazón de Australia</h3>
-        <p>Cruza el mundo para ver la Opera House y las mejores playas de surf.</p>
-        <div class="price-value">1100€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Buscar Vuelos</a>
-    </div>
-</div>
-
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-blue" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Cercano</span>
-        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800" alt="London Eye">
-    </div>
-    <div class="card-content">
-        <h3>Fin de Semana en Londres</h3>
-        <p>Shopping en Oxford Street y cena en el Soho. ¡Escapada perfecta!</p>
-        <div class="price-value">120€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Hoteles</a>
-    </div>
-</div>           
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800" alt="Suiza">
-    </div>
-    <div class="card-content">
-        <h3>Valencia ✈️ Ginebra</h3>
-        <p>Escápate a los Alpes con vuelos directos y económicos.</p>
-        <div class="price-value">65€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Buscar Vuelos</a>
-    </div>
-</div>
-
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-blue" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Tendencia</span>
-        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800" alt="Osaka">
-    </div>
-    <div class="card-content">
-        <h3>Madrid ✈️ Osaka</h3>
-        <p>Descubre la capital gastronómica de Japón al mejor precio.</p>
-        <div class="price-value">610€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Buscar Vuelos</a>
-    </div>
-</div>
-            <div class="hotel-card animate-fadeInUp">
-                <div class="hotel-image">
-                    <span class="badge badge-blue" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Boutique</span>
-                    <img src="https://images.unsplash.com/photo-1551882547-ff43c63e1c04?auto=format&fit=crop&w=800&q=80" alt="Hotel Boutique París">
-                </div>
-                <div class="card-content">
-                    <h3>Hotel de la Ville, París</h3>
-                    <p>Elegancia clásica en el corazón del barrio de Le Marais.</p>
-                    <div class="price-value">195€</div>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Disponibilidad</a>
-                </div>
+            <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1557160854-e1e89fdd3286?q=80&w=400');">
+                <div class="overlay">Washington DC 🇺🇸</div>
             </div>
-  
-            <div class="hotel-card animate-fadeInUp">
-                <div class="hotel-image">
-                    <span class="badge badge-green" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Wellness</span>
-                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" alt="Spa Resort Bali">
-                </div>
-                <div class="card-content">
-                    <h3>Ubud Zen Retreat, Bali</h3>
-                    <p>Paz absoluta rodeado de selva y campos de arroz.</p>
-                    <div class="price-value">85€</div>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Disponibilidad</a>
-                </div>
-            </div>
-
-            <div class="hotel-card animate-fadeInUp">
-                <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Modern Hotel Tokyo">
-                </div>
-                <div class="card-content">
-                    <h3>Skyline View Hotel, Tokio</h3>
-                    <p>Habitaciones modernas con vistas al Monte Fuji.</p>
-                    <div class="price-value">145€</div>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Disponibilidad</a>
-                </div>
-            </div>
-
-            <div class="hotel-card animate-fadeInUp">
-                <div class="hotel-image">
-                    <span class="badge badge-orange" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Histórico</span>
-                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" alt="Grand Hotel Venezia">
-                </div>
-                <div class="card-content">
-                    <h3>Grand Canal Palace, Venecia</h3>
-                    <p>Vive la experiencia veneciana en un palacio del siglo XVIII.</p>
-                    <div class="price-value">210€</div>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Disponibilidad</a>
-                </div>
-            </div>
-
-            <div class="hotel-card animate-fadeInUp">
-                <div class="hotel-image">
-                    <img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=800&q=80" alt="Swiss Chalet">
-                </div>
-                <div class="card-content">
-                    <h3>Alpine Lodge, Alpes Suizos</h3>
-                    <p>El refugio perfecto para los amantes del esquí y la montaña.</p>
-                    <div class="price-value">175€</div>
-                    <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Disponibilidad</a>
-                </div>
-            </div>
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-orange" style="position: absolute; top: 15px; left: 15px; z-index: 2;">NUEVO</span>
-        <img src="URL_DE_LA_FOTO" alt="Nombre del Destino" loading="lazy">
-    </div>
-    <div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-blue" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Historia Viva</span>
-        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800" alt="Atenas">
-    </div>
-    <div class="card-content">
-        <h3>Atenas, Grecia</h3>
-        <p>Cuna de la civilización occidental. Visita el Partenón y cena en las calles de Plaka.</p>
-        <div class="price-value">75€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
-    </div>
-</div>
-
-<div class="hotel-card animate-fadeInUp">
-    <div class="hotel-image">
-        <span class="badge badge-orange" style="position: absolute; top: 15px; left: 15px; z-index: 2;">Tradicional</span>
-        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800" alt="Kioto">
-    </div>
-    <div class="card-content">
-        <h3>Kioto, Japón</h3>
-        <p>El Japón más auténtico: templos dorados, jardines zen y la magia de las geishas.</p>
-        <div class="price-value">115€</div>
-        <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434" class="btn-book">Ver Ofertas</a>
-    </div>
-</div>
-</div>
         </div>
-    </main>
+    </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Voyages.Tours</div>
-            <div class="footer-links">
-                <a href="hoteles.html">🏨 Hoteles</a>
-                <a href="vuelos.html">✈️ Vuelos</a>
-                <a href="tours.html">🚂 Tours</a>
-                <a href="ia-assistant.html">🤖 Asistente IA</a>
-            </div>
-            <p>© 2025 Voyages.Tours - Afiliado Oficial de Trip.com | Todos los derechos reservados</p>
+    <div class="destinos-container">
+        <h2 class="section-title" style="color: white; margin-top: 0; text-align: center;">Próximas Rutas 2026</h2>
+        <div class="destinos-flex">
+            <div class="destino-pill">🏔️ Alpes Suizos (Mayo)</div>
+            <div class="destino-pill">🏙️ Tokyo Express (Julio)</div>
+            <div class="destino-pill">🍷 Toscana Italiana (Sept)</div>
+            <div class="destino-pill">🗽 New York Winter (Dic)</div>
         </div>
+    </div>
+
+    <section class="testimonials">
+        <h2 class="section-title" style="text-align: center;">Lo que dicen los viajeros</h2>
+        
+        <div class="test-card">
+            <p>"Gracias a las recomendaciones de Albert descubrí un hotel en Ginebra que no aparecía en ninguna guía. ¡Vistas increíbles!"</p>
+            <b>- Carlos R.</b>
+        </div>
+
+        <div class="test-card">
+            <p>"La guía de Washington fue clave para nuestro viaje familiar. El hotel para niños fue un éxito total."</p>
+            <b>- Elena M.</b>
+        </div>
+    </section>
+
+    <footer style="text-align: center;">
+        <p>Voyages Tours © 2026 - Conectando almas con paisajes</p>
+        <p style="opacity: 0.5;">Suiza | Italia | España | USA</p>
     </footer>
+
 </body>
 </html>
