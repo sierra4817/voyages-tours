@@ -27,7 +27,6 @@
 
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margin-bottom: 15px; }
 
-        /* HEADER */
         .hero { 
             padding: 60px 20px 100px; 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop'); 
@@ -46,7 +45,6 @@
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
         }
 
-        /* MOCKUP RESPONSIVO */
         .hero-mockup { 
             margin: -50px auto 30px; 
             width: 90%; 
@@ -54,15 +52,12 @@
             position: relative; 
             z-index: 10; 
         }
-        .hero-mockup a { display: block; text-decoration: none; transition: transform 0.3s ease; }
-        .hero-mockup a:hover { transform: translateY(-5px); }
         .hero-mockup img { 
             width: 100%; 
             filter: drop-shadow(0 15px 30px rgba(0, 70, 181, 0.25)); 
             border-radius: 12px; 
         }
 
-        /* FORMULARIO */
         .optin-container { 
             width: 85%;
             max-width: 400px; 
@@ -92,9 +87,7 @@
             box-sizing: border-box;
             font-size: 1.1rem;
         }
-        .cta-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
 
-        /* SECCIÓN PRODUCTOS */
         .section { padding: 40px 15px; max-width: 1000px; margin: 0 auto; box-sizing: border-box; }
 
         .product-list { 
@@ -109,45 +102,29 @@
             text-align: left; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
-        .product-item:hover { transform: translateY(-5px); }
-        .product-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
+        .product-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
         .product-content { padding: 20px; border-bottom: 4px solid var(--trip-blue-bright); }
         .product-item h4 { margin: 0 0 10px 0; color: var(--trip-blue-dark); font-size: 1.2rem; }
-        .product-item p { font-size: 0.95rem; margin: 0; color: #4a5568; }
-
-        /* OFERTA Y CONTADOR */
-        #oferta { 
-            margin-top: 30px; padding: 40px 15px; 
-            border: 2px solid var(--trip-blue-bright); 
-            background: var(--white); border-radius: 15px;
-            box-sizing: border-box;
-        }
 
         .countdown { 
             display: flex; 
             justify-content: center; 
             gap: 8px; 
             margin: 25px 0; 
-            flex-wrap: wrap; /* Para que no se rompa en móviles pequeños */
+            flex-wrap: wrap; 
         }
         .time-box { 
             background: var(--text-main); color: white; 
             padding: 12px; min-width: 65px; border-radius: 8px; 
-            box-sizing: border-box;
         }
         .time-box span { display: block; font-size: 1.8rem; font-weight: 700; font-family: 'Oswald'; }
         .time-box label { font-size: 0.6rem; text-transform: uppercase; opacity: 0.7; }
 
         footer { padding: 40px 20px; color: #a0aec0; font-size: 0.8rem; }
-
-        /* AJUSTES MÓVIL */
-        @media (max-width: 480px) {
-            .hero { padding: 40px 15px 80px; }
-            .optin-container { width: 90%; padding: 20px; }
-            .time-box { min-width: 55px; padding: 8px; }
-            .time-box span { font-size: 1.4rem; }
-        }
     </style>
 </head>
 <body>
@@ -159,9 +136,7 @@
 
     <div class="container">
         <div class="hero-mockup">
-            <a href="https://paa.ge/voyages.tours/en">
-                <img src="mockup.png.PNG" alt="Voyages Tours Guide">
-            </a>
+            <img src="mockup.png.PNG" alt="Voyages Tours Guide">
         </div>
 
         <div class="optin-container">
@@ -178,80 +153,35 @@
         <h2 style="color: var(--text-main); font-size: 1.8rem;">El Protocolo del Viajero</h2>
         
         <div class="product-list">
-            <a href="https://paa.ge/voyages.tours/en" style="text-decoration: none; color: inherit;">
-                <div class="product-item">
-                    <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27451?q=80&w=500" alt="Suiza">
-                    <div class="product-content">
-                        <h4>🇨🇭 El Secreto de Borex</h4>
-                        <p>Acceso a las rutas menos transitadas de Suiza y los mejores puntos fotográficos ocultos.</p>
-                    </div>
+            <a href="https://paa.ge/voyages.tours/en" class="product-item">
+                <img src="mockup.png.PNG" alt="Suiza">
+                <div class="product-content">
+                    <h4>🇨🇭 El Secreto de Borex</h4>
+                    <p>Acceso a las rutas menos transitadas de Suiza y los mejores puntos fotográficos ocultos.</p>
                 </div>
             </a>
 
-            <a href="https://paa.ge/voyages.tours/en" style="text-decoration: none; color: inherit;">
-                <div class="product-item">
-                    <img src="https://images.unsplash.com/photo-1541079172217-247507353a1e?q=80&w=500" alt="Italia">
-                    <div class="product-content">
-                        <h4>🇮🇹 Italia Inexplorada</h4>
-                        <p>Restaurantes y rincones que solo los locales conocen en Florencia y Toscana.</p>
-                    </div>
+            <a href="https://paa.ge/voyages.tours/en" class="product-item">
+                <img src="mockup.png.PNG" alt="Italia">
+                <div class="product-content">
+                    <h4>🇮🇹 Italia Inexplorada</h4>
+                    <p>Restaurantes y rincones que solo los locales conocen en Florencia y Toscana.</p>
                 </div>
             </a>
 
-            <a href="https://paa.ge/voyages.tours/en" style="text-decoration: none; color: inherit;">
-                <div class="product-item">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=500" alt="Hoteles">
-                    <div class="product-content">
-                        <h4>🏨 Filtro de Hoteles VIP</h4>
-                        <p>Lista personal de alojamientos con alma: desde cabañas hasta hoteles boutique tácticos.</p>
-                    </div>
+            <a href="https://paa.ge/voyages.tours/en" class="product-item">
+                <img src="mockup.png.PNG" alt="Hoteles">
+                <div class="product-content">
+                    <h4>🏨 Filtro de Hoteles VIP</h4>
+                    <p>Lista personal de alojamientos con alma: desde cabañas hasta hoteles boutique.</p>
                 </div>
             </a>
-        </div>
-
-        <div id="oferta">
-            <h2 style="margin-top:0; color: var(--trip-blue-bright); font-size: 1.5rem;">RESERVA TU PRÓXIMA RUTA</h2>
-            <p style="font-size: 0.9rem;">Obtén un <b>10% DE DESCUENTO</b> exclusivo usando el código <b>TT666</b>.</p>
-            
-            <div class="countdown">
-                <div class="time-box"><span id="days">01</span><label>Días</label></div>
-                <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
-                <div class="time-box"><span id="mins">00</span><label>Min</label></div>
-                <div class="time-box"><span id="secs">00</span><label>Seg</label></div>
-            </div>
-
-            <a href="https://paa.ge/voyages.tours/en" class="cta-btn">Ver Disponibilidad</a>
-            <p style="font-size:0.75rem; margin-top:15px; color: #718096;">Asesoría personalizada • Secret Spots</p>
         </div>
     </main>
 
     <footer>&copy; 2026 VOYAGES TOURS • @voyages.tours</footer>
 
     <script>
-        // Contador Dinámico
-        const targetDate = new Date().getTime() + (1 * 24 * 60 * 60 * 1000 + 7 * 60 * 60 * 1000); 
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-
-            if (diff <= 0) return;
-
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = d < 10 ? '0'+d : d;
-            document.getElementById('hours').innerText = h < 10 ? '0'+h : h;
-            document.getElementById('mins').innerText = m < 10 ? '0'+m : m;
-            document.getElementById('secs').innerText = s < 10 ? '0'+s : s;
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // Lógica de formulario Formspree (Manteniendo tu anterior integración)
         const form = document.getElementById("form-alfa");
         const btn = document.getElementById("btn-submit");
 
