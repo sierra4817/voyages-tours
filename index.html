@@ -3,269 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages Tours | Protocolo de Viaje</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Voyages Tours | Viajes con Alma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --trip-blue-bright: #3284ff;
-            --trip-blue-dark: #0046b5;
-            --trip-bg: #f5f7fa;
-            --white: #ffffff;
-            --text-main: #1a2b48;
-            --btn-gradient: linear-gradient(180deg, #3284ff 0%, #0066ff 45%, #0046b5 100%);
+            --sky-blue: #00A8E8;
+            --deep-ocean: #003459;
+            --cloud: #F8F9FA;
+            --accent-gold: #D4AF37;
+            --text-dark: #2D3436;
         }
 
-        body { 
-            font-family: 'Roboto', sans-serif; 
-            background-color: var(--trip-bg); 
-            color: var(--text-main); 
-            margin: 0; 
-            text-align: center; 
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cloud);
+            color: var(--text-dark);
+        }
+
+        /* HEADER ESTILO TIKTOK PREMIUM */
+        header {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--sky-blue);
+            padding: 3px;
+            margin-bottom: 15px;
+        }
+
+        .username {
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0;
+            color: var(--deep-ocean);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .stats span b { font-weight: 800; color: black; }
+
+        .bio {
+            max-width: 400px;
+            margin: 0 auto;
+            font-size: 14px;
             line-height: 1.6;
-            overflow-x: hidden;
+            color: #636e72;
         }
 
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margin-bottom: 15px; }
-
-        /* HEADER RESPONSIVO */
-        .hero { 
-            padding: 60px 20px 100px; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover; 
-            background-position: center;
-            border-bottom: 4px solid var(--trip-blue-bright); 
+        /* BOTÓN DE RESERVA (DESTACADO) */
+        .reserva-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: linear-gradient(135deg, var(--sky-blue), var(--deep-ocean));
             color: white;
-        }
-
-        .titulo-alfa { 
-            font-size: clamp(2rem, 10vw, 4.5rem); 
-            background: linear-gradient(to bottom, #ffffff 0%, #a5c9ff 100%);
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            margin: 0; 
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-        }
-
-        /* MOCKUP AJUSTADO PARA MÓVIL */
-        .hero-mockup { 
-            margin: -50px auto 30px; 
-            width: 90%; 
-            max-width: 480px; 
-            position: relative; 
-            z-index: 10; 
-        }
-        .hero-mockup a { display: block; transition: transform 0.3s ease; }
-        .hero-mockup a:hover { transform: translateY(-5px); }
-        .hero-mockup img { 
-            width: 100%; 
-            filter: drop-shadow(0 15px 30px rgba(0, 70, 181, 0.25)); 
-            border-radius: 12px; 
-        }
-
-        /* CAJA DE REGISTRO */
-        .optin-container { 
-            width: 85%;
-            max-width: 400px; 
-            margin: 0 auto 40px; 
-            background: var(--white); 
-            padding: 25px; 
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            box-sizing: border-box;
-        }
-
-        input { 
-            width: 100%; padding: 15px; margin-bottom: 12px; 
-            background: #f0f2f5; border: 1px solid #dcdfe6; 
-            box-sizing: border-box; border-radius: 8px; font-size: 1rem;
-        }
-
-        .cta-btn { 
-            display: flex; align-items: center; justify-content: center;
-            width: 100%; padding: 18px;
-            background: var(--btn-gradient);
-            color: white !important; font-weight: 800; font-family: 'Oswald', sans-serif;
-            border: none; cursor: pointer; text-transform: uppercase;
-            text-decoration: none; border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
-            transition: 0.3s ease;
-            box-sizing: border-box;
-            font-size: 1.1rem;
-        }
-
-        /* GRID DE PRODUCTOS RESPONSIVO */
-        .section { padding: 40px 15px; max-width: 1100px; margin: 0 auto; box-sizing: border-box; }
-
-        .product-list { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
-            margin: 30px 0; 
-        }
-        .product-item { 
-            background: var(--white); border-radius: 15px;
-            overflow: hidden;
-            text-align: left; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            padding: 12px 30px;
+            border-radius: 50px;
             text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .product-item:hover { transform: translateY(-8px); }
-        .product-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .product-content { padding: 25px; border-bottom: 5px solid var(--trip-blue-bright); }
-        .product-item h4 { margin: 0 0 10px 0; color: var(--trip-blue-dark); font-size: 1.4rem; }
-
-        /* OFERTA Y CONTADOR RESPONSIVO */
-        #oferta { 
-            margin-top: 30px; padding: 50px 15px; 
-            border: 2px solid var(--trip-blue-bright); 
-            background: var(--white); border-radius: 15px;
-            box-sizing: border-box;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 168, 232, 0.3);
+            transition: 0.3s;
         }
 
-        .countdown { 
-            display: flex; 
-            justify-content: center; 
-            gap: 10px; 
-            margin: 25px 0; 
-            flex-wrap: wrap; 
-        }
-        .time-box { 
-            background: var(--text-main); color: white; 
-            padding: 15px; min-width: 75px; border-radius: 10px; 
-            flex: 1; max-width: 85px;
-        }
-        .time-box span { display: block; font-size: 1.8rem; font-weight: 700; font-family: 'Oswald'; }
-        .time-box label { font-size: 0.65rem; text-transform: uppercase; opacity: 0.7; }
+        .reserva-btn:hover { transform: scale(1.05); }
 
-        footer { padding: 40px 20px; color: #a0aec0; font-size: 0.85rem; }
+        /* GRID DE VIAJES */
+        .travel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
 
-        @media (max-width: 480px) {
-            .hero { padding: 40px 10px 80px; }
-            .titulo-alfa { font-size: 2.5rem; }
-            .time-box { min-width: 60px; padding: 10px; }
-            .time-box span { font-size: 1.5rem; }
+        .video-card {
+            position: relative;
+            aspect-ratio: 9/16;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* Overlay de texto (Estilo tu TikTok) */
+        .video-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 40%, rgba(0,0,0,0.6) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .video-card h3 {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(12px, 4vw, 18px);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .views {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 600px) {
+            .travel-grid { grid-template-columns: repeat(3, 1fr); }
+            .username { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1 class="titulo-alfa">VOYAGES TOURS</h1>
-        <p style="letter-spacing: 3px; font-weight: 400; text-transform: uppercase; font-size: 0.9rem;">Viajes con Alma • Paisajes que Inspiran</p>
-    </header>
-
-    <div class="container">
-        <div class="hero-mockup">
-            <a href="https://paa.ge/voyages.tours/en">
-                <img src="mockup.png.PNG" alt="Voyages Tours Guide">
-            </a>
+    <header>
+        <img src="https://via.placeholder.com/150" alt="Albert" class="profile-pic">
+        <h1 class="username">Albert ✓</h1>
+        <p style="color: var(--sky-blue); font-weight: 600; margin: 5px 0;">@voyages.tours</p>
+        
+        <div class="stats">
+            <span><b>18.8k</b> Seguidores</span>
+            <span><b>13.2k</b> Me gusta</span>
         </div>
 
-        <div class="optin-container">
-            <h2 style="font-size: 1.2rem; color: var(--trip-blue-dark); margin-bottom: 20px;">DESCARGA TU GUÍA DE "SECRET SPOTS"</h2>
-            <form id="form-alfa">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Email" required>
-                <button type="submit" id="btn-submit" class="cta-btn">Enviar mi Guía Ahora</button>
-            </form>
+        <div class="bio">
+            🇮🇹 🇪🇸 🇺🇸 🇪🇺 Viajes con alma y paisajes que inspiran ✨<br>
+            Follow for secret spots 🇫🇷
+        </div>
+
+        <a href="#" class="reserva-btn">RESERVA AQUÍ (10% OFF): TT666 👇</a>
+    </header>
+
+    <div class="travel-grid">
+        <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=500');">
+            <div class="overlay">
+                <h3>Ginebra<br>Suiza 🇨🇭</h3>
+            </div>
+            <div class="views">▶ 19.5k</div>
+        </div>
+
+        <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1557160854-e1e89fdd3286?auto=format&fit=crop&w=500');">
+            <div class="overlay">
+                <h3>Dónde Dormir en Washington 🇺🇸</h3>
+            </div>
+            <div class="views">▶ 717</div>
+        </div>
+
+        <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500');">
+            <div class="overlay">
+                <h3>El mejor hotel para niños</h3>
+            </div>
+            <div class="views">▶ 2,728</div>
+        </div>
+
+        <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&w=500');">
+            <div class="overlay">
+                <h3>La cabaña de tus sueños</h3>
+            </div>
+            <div class="views">▶ 4,724</div>
+        </div>
+
+        <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1527668752968-14dc70a27451?auto=format&fit=crop&w=500');">
+            <div class="overlay">
+                <h3>Explorando Borex 🇨🇭</h3>
+            </div>
+            <div class="views">▶ 149</div>
+        </div>
+
+        <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1541079172217-247507353a1e?auto=format&fit=crop&w=500');">
+            <div class="overlay">
+                <h3>El secreto de Florencia 🇮🇹</h3>
+            </div>
+            <div class="views">▶ 1,976</div>
         </div>
     </div>
 
-    <main class="section">
-        <h2 style="color: var(--text-main); font-size: 2rem; margin-bottom: 30px;">El Protocolo del Viajero</h2>
-        
-        <div class="product-list">
-            <a href="https://paa.ge/voyages.tours/en" class="product-item">
-                <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27451?q=80&w=800" alt="Suiza Secret Spots">
-                <div class="product-content">
-                    <h4>🇨🇭 El Secreto de Suiza</h4>
-                    <p>Acceso a las rutas menos transitadas de Suiza y los mejores puntos fotográficos ocultos.</p>
-                </div>
-            </a>
+    <footer style="text-align: center; padding: 40px; font-size: 12px; color: #999;">
+        © 2024 Voyages Tours - Viajes con alma
+    </footer>
 
-            <a href="https://paa.ge/voyages.tours/en" class="product-item">
-                <img src="https://images.unsplash.com/photo-1541079172217-247507353a1e?q=80&w=800" alt="Italia Inexplorada">
-                <div class="product-content">
-                    <h4>🇮🇹 Italia Inexplorada</h4>
-                    <p>Restaurantes y rincones que solo los locales conocen en Florencia y Toscana.</p>
-                </div>
-            </a>
-
-            <a href="https://paa.ge/voyages.tours/en" class="product-item">
-                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800" alt="Hoteles VIP">
-                <div class="product-content">
-                    <h4>🏨 Filtro de Hoteles VIP</h4>
-                    <p>Mi lista personal de alojamientos con alma: desde cabañas hasta hoteles boutique tácticos.</p>
-                </div>
-            </a>
-        </div>
-
-        <div id="oferta">
-            <h2 style="margin-top:0; color: var(--trip-blue-bright);">RESERVA TU PRÓXIMA RUTA</h2>
-            <p>Obtén un <b>10% DE DESCUENTO</b> exclusivo para la comunidad usando el código <b>TT666</b>.</p>
-            
-            <div class="countdown">
-                <div class="time-box"><span id="days">00</span><label>Días</label></div>
-                <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
-                <div class="time-box"><span id="mins">00</span><label>Mins</label></div>
-                <div class="time-box"><span id="secs">00</span><label>Segs</label></div>
-            </div>
-
-            <div style="display: flex; justify-content: center;">
-                <a href="https://paa.ge/voyages.tours/en" class="cta-btn">Ver Destinos Disponibles</a>
-            </div>
-            <p style="font-size:0.85rem; margin-top:20px; color: #718096;">Asesoría personalizada • Secret Spots • Paisajes Únicos</p>
-        </div>
-    </main>
-
-    <footer>&copy; 2026 VOYAGES TOURS • @voyages.tours</footer>
-
-    <script>
-        // Lógica del contador dinámica reparada
-        const targetDate = new Date().getTime() + (1 * 24 * 60 * 60 * 1000 + 7 * 60 * 60 * 1000 + 57 * 60 * 1000); 
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-
-            if (diff <= 0) return;
-
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = d < 10 ? '0'+d : d;
-            document.getElementById('hours').innerText = h < 10 ? '0'+h : h;
-            document.getElementById('mins').innerText = m < 10 ? '0'+m : m;
-            document.getElementById('secs').innerText = s < 10 ? '0'+s : s;
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // Integración con Formspree
-        const form = document.getElementById("form-alfa");
-        const btn = document.getElementById("btn-submit");
-
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
-            btn.innerHTML = "ENVIANDO...";
-            btn.disabled = true;
-
-            const ebookLink = "https://drive.google.com/file/d/1nUlSOzEGNRx9r4S36GyrZRUjasrnn8vK/view?usp=sharing";
-
-            fetch("https://formspree.io/f/mbdpqqpv", {
-                method: "POST",
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            }).finally(() => {
-                window.location.href = ebookLink;
-            });
-        });
-    </script>
 </body>
 </html>
