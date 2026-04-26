@@ -3,204 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages Tours | Viajes con Alma</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Voyages Tours | El Protocolo del Viajero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* PALETA VIAJERA PREMIUM */
             --sky-blue: #00A8E8;
-            --deep-ocean: #003459;
-            --cloud: #F8F9FA;
-            --text-dark: #2D3436;
+            --ocean-depth: #003459;
+            --cloud-white: #ffffff;
+            --sand-light: #f4f1ea;
+            --sky-gradient: linear-gradient(to bottom, #00A8E8 0%, #007EA7 50%, #003459 100%);
         }
 
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--cloud);
-            color: var(--text-dark);
-            scroll-behavior: smooth;
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: var(--sand-light); 
+            color: #2d3436; 
+            margin: 0; 
+            text-align: center; 
+            line-height: 1.7; 
         }
 
-        /* HEADER */
-        header {
-            background: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; color: var(--ocean-depth); }
 
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid var(--sky-blue);
-            padding: 4px;
-            margin-bottom: 15px;
-            object-fit: cover;
-        }
-
-        .username { font-size: 26px; font-weight: 800; margin: 0; color: var(--deep-ocean); }
-        .stats { display: flex; justify-content: center; gap: 30px; margin: 20px 0; font-size: 14px; }
-        .stats b { color: var(--sky-blue); font-size: 18px; }
-
-        .reserva-btn {
-            display: inline-block;
-            margin-top: 15px;
-            background: linear-gradient(135deg, var(--sky-blue), var(--deep-ocean));
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 20px rgba(0, 168, 232, 0.3);
-        }
-
-        /* GRID TIKTOK STYLE */
-        .section-title { font-family: 'Playfair Display', serif; font-size: 28px; margin: 50px 0 20px; }
-        
-        .travel-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .video-card {
-            aspect-ratio: 9/16;
-            background-size: cover;
+        /* HEADER ESTILO ALFA */
+        .hero { 
+            padding: 80px 20px; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover; 
             background-position: center;
-            position: relative;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .video-card:hover { transform: translateY(-5px); }
-
-        .video-card .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8) 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 10px;
+            border-bottom: 5px solid var(--sky-blue); 
             color: white;
-            font-size: 11px;
-            font-weight: 600;
         }
 
-        /* PRÓXIMAS RUTAS */
-        .destinos-container {
-            background: var(--deep-ocean);
-            color: white;
-            padding: 60px 20px;
-            margin-top: 60px;
+        .titulo-voyages { 
+            font-size: clamp(2.5rem, 8vw, 5rem); 
+            background: var(--sky-gradient); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            margin: 0; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
-        .destinos-flex {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
+        /* MOCKUP DE GUÍAS */
+        .hero-mockup { margin: -50px auto 40px; max-width: 500px; position: relative; z-index: 10; }
+        .hero-mockup img { 
+            width: 100%; 
+            filter: drop-shadow(0 20px 40px rgba(0, 52, 89, 0.4)); 
+            border-radius: 12px; 
         }
 
-        .destino-pill {
-            background: rgba(255,255,255,0.1);
-            padding: 10px 25px;
-            border-radius: 30px;
-            border: 1px solid var(--sky-blue);
+        /* CONTENEDOR DE CAPTACIÓN */
+        .optin-container { 
+            max-width: 450px; 
+            margin: 0 auto 40px; 
+            background: white; 
+            padding: 30px; 
+            border: 1px solid var(--sky-blue); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        /* TESTIMONIOS */
-        .testimonials {
-            max-width: 800px;
-            margin: 80px auto;
-            padding: 0 20px;
+        input { 
+            width: 100%; padding: 15px; margin-bottom: 15px; 
+            background: #f9f9f9; border: 1px solid #ddd; 
+            box-sizing: border-box; border-radius: 4px;
         }
 
-        .test-card {
+        /* BOTÓN ESTILO LÍQUIDO (AZUL) */
+        .cta-btn { 
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; padding: 20px;
+            background: linear-gradient(180deg, #00A8E8 0%, #007EA7 45%, #003459 100%);
+            color: white !important; font-weight: 800; font-family: 'Oswald', sans-serif;
+            border: none; cursor: pointer; text-transform: uppercase;
+            text-decoration: none; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 168, 232, 0.4);
+        }
+        .cta-btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+
+        .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
+
+        /* PRODUCTOS / RUTAS */
+        .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
+        .product-item { 
+            background: white; border: 1px solid #eee;
+            border-left: 5px solid var(--sky-blue); 
+            padding: 25px; text-align: left; 
+        }
+        .product-item h4 { margin: 0 0 10px 0; color: var(--ocean-depth); font-family: 'Oswald', sans-serif; }
+
+        /* OFERTA FINAL CON CONTADOR */
+        #oferta-limitada { 
+            margin-top: 40px; padding: 50px 20px; 
+            border: 3px solid var(--ocean-depth); 
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-            text-align: left;
-            border-left: 5px solid var(--sky-blue);
         }
 
-        .test-card p { font-style: italic; color: #555; }
-        .test-card b { color: var(--deep-ocean); }
+        .countdown { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
+        .time-box { background: var(--ocean-depth); color: white; padding: 15px; min-width: 60px; border-radius: 8px; }
+        .time-box span { display: block; font-size: 2rem; font-weight: 700; font-family: 'Oswald'; }
+        .time-box label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.7; }
 
-        footer { padding: 50px; background: #eee; font-size: 13px; color: #777; }
-
+        footer { padding: 60px 20px; color: #999; font-size: 0.8rem; background: #fff; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://via.placeholder.com/150" alt="Albert" class="profile-pic">
-        <h1 class="username">Albert ✓</h1>
-        <p style="color: var(--sky-blue); font-weight: 600;">@voyages.tours</p>
-        
-        <div class="stats">
-            <span><b>18.8k</b> Seguidores</span>
-            <span><b>13.2k</b> Me gusta</span>
-        </div>
-
-        <p style="max-width: 500px; margin: 0 auto 20px; color: #666;">
-            🇮🇹 🇪🇸 🇺🇸 🇪🇺 Viajes con alma y paisajes que inspiran ✨<br>
-            Te enseño los <i>Secret Spots</i> de Europa y el mundo.
-        </p>
-
-        <a href="#" class="reserva-btn">Reserva tu Guía (10% OFF)</a>
+    <header class="hero">
+        <h1 class="titulo-voyages">VOYAGES TOURS</h1>
+        <p style="letter-spacing: 4px; font-weight: 300; text-transform: uppercase;">Viajes con Alma • Paisajes que Inspiran</p>
     </header>
 
-    <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 10px;">
-        <h2 class="section-title">Explora mis Aventuras</h2>
-        <div class="travel-grid">
-            <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1527668752968-14dc70a27451?q=80&w=400');">
-                <div class="overlay">Ginebra, Suiza 🇨🇭</div>
-            </div>
-            <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1541079172217-247507353a1e?q=80&w=400');">
-                <div class="overlay">Duomo Florencia 🇮🇹</div>
-            </div>
-            <div class="video-card" style="background-image: url('https://images.unsplash.com/photo-1557160854-e1e89fdd3286?q=80&w=400');">
-                <div class="overlay">Washington DC 🇺🇸</div>
-            </div>
+    <div class="container">
+        <div class="hero-mockup">
+            <img src="mockup.png.PNG" alt="Voyages Tours Guide">
+        </div>
+
+        <div class="optin-container">
+            <p style="font-weight:700; margin-bottom: 20px; color: var(--sky-blue);">DESCARGA TU GUÍA DE "SECRET SPOTS" GRATIS</p>
+            <form>
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Email" required>
+                <button type="submit" class="cta-btn">Enviar mi Guía Ahora</button>
+            </form>
         </div>
     </div>
 
-    <div class="destinos-container">
-        <h2 class="section-title" style="color: white; margin-top: 0; text-align: center;">Próximas Rutas 2026</h2>
-        <div class="destinos-flex">
-            <div class="destino-pill">🏔️ Alpes Suizos (Mayo)</div>
-            <div class="destino-pill">🏙️ Tokyo Express (Julio)</div>
-            <div class="destino-pill">🍷 Toscana Italiana (Sept)</div>
-            <div class="destino-pill">🗽 New York Winter (Dic)</div>
+    <main class="section">
+        <h2>El Protocolo del Viajero</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <h4>🇨🇭 El Secreto de Borex</h4>
+                <p>Acceso a las rutas menos transitadas de Suiza y los mejores puntos fotográficos.</p>
+            </div>
+            <div class="product-item">
+                <h4>🇮🇹 Italia Inexplorada</h4>
+                <p>Más allá del Duomo: Restaurantes y rincones que solo los locales conocen en Florencia.</p>
+            </div>
+            <div class="product-item">
+                <h4>🏨 Filtro de Hoteles VIP</h4>
+                <p>Mi lista personal de alojamientos con alma: desde cabañas de ensueño hasta hoteles para niños.</p>
+            </div>
         </div>
-    </div>
 
-    <section class="testimonials">
-        <h2 class="section-title" style="text-align: center;">Lo que dicen los viajeros</h2>
-        
-        <div class="test-card">
-            <p>"Gracias a las recomendaciones de Albert descubrí un hotel en Ginebra que no aparecía en ninguna guía. ¡Vistas increíbles!"</p>
-            <b>- Carlos R.</b>
+        <div id="oferta-limitada">
+            <h2 style="margin-top:0;">RESERVA TU PRÓXIMA RUTA</h2>
+            <p>Obtén un <b>10% DE DESCUENTO</b> en tu próxima reserva usando el código <b>TT666</b>. Oferta expira en:</p>
+            
+            <div class="countdown">
+                <div class="time-box"><span id="days">01</span><label>Días</label></div>
+                <div class="time-box"><span id="hours">08</span><label>Horas</label></div>
+                <div class="time-box"><span id="mins">45</span><label>Mins</label></div>
+                <div class="time-box"><span id="secs">12</span><label>Segs</label></div>
+            </div>
+
+            <a href="https://paa.ge/voyages.tours/en" class="cta-btn">Ver Destinos Disponibles</a>
+            <p style="font-size:0.75rem; margin-top:20px; color: #777;">Asesoría personalizada • Secret Spots • Paisajes Únicos</p>
         </div>
+    </main>
 
-        <div class="test-card">
-            <p>"La guía de Washington fue clave para nuestro viaje familiar. El hotel para niños fue un éxito total."</p>
-            <b>- Elena M.</b>
-        </div>
-    </section>
+    <footer>&copy; 2026 VOYAGES TOURS • SUIZA | ITALIA | ESPAÑA | USA</footer>
 
-    <footer style="text-align: center;">
-        <p>Voyages Tours © 2026 - Conectando almas con paisajes</p>
-        <p style="opacity: 0.5;">Suiza | Italia | España | USA</p>
-    </footer>
+    <script>
+        // LÓGICA DEL CONTADOR
+        const targetDate = new Date().getTime() + (1 * 24 * 60 * 60 * 1000 + 8 * 60 * 60 * 1000); 
 
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = d < 10 ? '0'+d : d;
+            document.getElementById('hours').innerText = h < 10 ? '0'+h : h;
+            document.getElementById('mins').innerText = m < 10 ? '0'+m : m;
+            document.getElementById('secs').innerText = s < 10 ? '0'+s : s;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
 </body>
 </html>
