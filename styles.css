@@ -1,12 +1,21 @@
 :root {
-    --bg-dark: #050505;
-    --gold-accent: #d4af37;
-    --gold-hover: #b5952f;
-    --cyan-glow: rgba(0, 255, 255, 0.2);
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
+    --bg-pure-black: #030303;
+    --bg-dark-marble: #0a0a0a;
+    
+    /* Paleta Oro Extraída Directamente de image_4.png */
+    --gold-light: #fff2b2;
+    --gold-mid: #f3e5ab;
+    --gold-base: #d4af37;
+    --gold-dark: #8c6212;
+    --gold-shadow: #3a2705;
+    
+    /* Gradientes Metálicos Líquidos */
+    --gold-metallic-grad: linear-gradient(135deg, #fff2b2 0%, #d4af37 40%, #8c6212 70%, #f3e5ab 100%);
+    --gold-line-grad: linear-gradient(90deg, transparent, #d4af37, #fff2b2, #8c6212, transparent);
+    
+    --glass-bg: rgba(10, 10, 10, 0.75);
+    --glass-border: rgba(212, 175, 55, 0.15);
+    
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -18,20 +27,44 @@
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
+    background-color: var(--bg-pure-black);
+    color: #ffffff;
     font-family: var(--font-body);
-    line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Glassmorphism Utilities */
-.glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
+/* Capa de textura de mármol de fondo para emular image_4.png */
+.marble-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(140, 98, 18, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Líneas Geométricas Angulares del Banner */
+.geometric-line {
+    position: absolute;
+    width: 150%;
+    height: 1px;
+    background: var(--gold-line-grad);
+    opacity: 0.3;
+    z-index: 1;
+}
+.line-top {
+    top: 10%;
+    left: -25%;
+    transform: rotate(-15deg);
+}
+.line-bottom {
+    bottom: 15%;
+    left: -25%;
+    transform: rotate(15deg);
 }
 
 /* Navigation */
@@ -39,38 +72,53 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1.5rem 5%;
+    padding: 1.2rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-radius: 0 0 12px 12px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.logo {
+.logo-vip {
     font-family: var(--font-heading);
     font-weight: 900;
+    font-size: 1.3rem;
     letter-spacing: 2px;
-    color: var(--gold-accent);
+    background: var(--gold-metallic-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vip-tag {
+    font-size: 0.8rem;
+    border: 1px solid var(--gold-base);
+    padding: 1px 6px;
+    margin-left: 5px;
+    border-radius: 3px;
+    vertical-align: middle;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-links a {
-    color: var(--text-primary);
+    color: #e0e0e0;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--gold-accent);
+    color: var(--gold-base);
 }
 
 /* Hero Section */
@@ -81,14 +129,20 @@ body {
     justify-content: center;
     text-align: center;
     padding: 0 20px;
-    background: radial-gradient(circle at center, rgba(20,20,20,1) 0%, var(--bg-dark) 100%);
+    position: relative;
+    background: linear-gradient(180deg, rgba(3,3,3,1) 0%, rgba(15,15,15,1) 50%, rgba(3,3,3,1) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
 }
 
 .avatar-container {
     position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 2rem auto;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 2.5rem auto;
 }
 
 .avatar {
@@ -96,7 +150,7 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--text-primary);
+    border: 2px solid var(--gold-base);
     position: relative;
     z-index: 2;
 }
@@ -108,145 +162,226 @@ body {
     right: -5px;
     bottom: -5px;
     border-radius: 50%;
-    background: var(--cyan-glow);
-    filter: blur(15px);
+    background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, transparent 70%);
+    filter: blur(10px);
     z-index: 1;
 }
 
-.title {
+/* Efecto de Texto 3D Cromado Oro (Fiel a la tipografía del Banner) */
+.title-3d {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.5rem, 5.5vw, 4.8rem);
     font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    line-height: 1.05;
+    margin-bottom: 1.8rem;
     text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: -1px;
+    text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c5c5c5, 
+                 0 3px 0 #bbb, 
+                 0 4px 0 #b0b0b0, 
+                 0 5px 0 #a0a0a0, 
+                 0 6px 1px rgba(0,0,0,.1), 
+                 0 0 5px rgba(0,0,0,.1), 
+                 0 1px 3px rgba(0,0,0,.3), 
+                 0 3px 5px rgba(0,0,0,.2), 
+                 0 5px 10px rgba(0,0,0,.25), 
+                 0 10px 10px rgba(0,0,0,.2), 
+                 0 20px 20px rgba(0,0,0,.15);
 }
 
-.highlight {
-    color: var(--gold-accent);
+.highlight-gold {
+    background: var(--gold-metallic-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto 2.5rem auto;
+    font-size: 1.15rem;
+    color: #b0b0b0;
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
-/* Buttons */
-.btn-primary, .btn-secondary {
+/* Botón de Oro Líquido 3D */
+.btn-gold-3d {
     display: inline-block;
-    padding: 1rem 2.5rem;
+    padding: 1.2rem 3rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--bg-pure-black);
+    background: var(--gold-metallic-grad);
+    border-radius: 4px;
+    box-shadow: 0 4px 0 var(--gold-dark), 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.btn-gold-3d:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--gold-dark), 0 4px 10px rgba(212, 175, 55, 0.2);
+}
+
+.btn-secondary-gold {
+    display: inline-block;
+    padding: 1rem 2rem;
     font-family: var(--font-heading);
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: var(--gold-base);
+    border: 1px solid var(--gold-dark);
+    background: rgba(13, 13, 13, 0.5);
     border-radius: 4px;
     transition: all 0.3s ease;
+    margin-top: 2rem;
 }
 
-.btn-primary {
-    background-color: var(--gold-accent);
-    color: var(--bg-dark);
+.btn-secondary-gold:hover {
+    background: var(--gold-metallic-grad);
+    color: var(--bg-pure-black);
+    border-color: transparent;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
-.btn-primary:hover {
-    background-color: var(--gold-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-}
-
-.btn-secondary {
-    border: 1px solid var(--gold-accent);
-    color: var(--gold-accent);
-    margin-top: 1.5rem;
-}
-
-.btn-secondary:hover {
-    background-color: var(--gold-accent);
-    color: var(--bg-dark);
-}
-
-/* Layout Grids */
+/* Sections Layout */
 .section {
-    padding: 8rem 5%;
+    padding: 10rem 5%;
+    position: relative;
+    z-index: 10;
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    font-weight: 800;
     text-align: center;
-    margin-bottom: 4rem;
-    color: var(--text-primary);
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: var(--gold-metallic-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1250px;
     margin: 0 auto;
 }
 
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 3rem;
-    max-width: 1000px;
+    gap: 3.5rem;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.card {
-    padding: 2.5rem;
-    text-align: left;
-    transition: transform 0.4s ease, border-color 0.4s ease;
+/* Tarjetas Premium con Línea de Acento Angular */
+.card-premium {
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.3);
+.card-border-gold {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gold-metallic-grad);
+    opacity: 0.7;
 }
 
-.card h3 {
+.card-premium:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-base);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+.card-premium h3 {
     font-family: var(--font-heading);
-    margin-bottom: 1rem;
-    color: var(--gold-accent);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: #ffffff;
 }
 
-.product-card {
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.card-premium p {
+    color: #999999;
+    font-size: 0.95rem;
+}
+
+.product-card-premium {
+    background: linear-gradient(135deg, rgba(15,15,15,0.95) 0%, rgba(5,5,5,0.95) 100%);
+    border: 1px solid var(--glass-border);
+    padding: 4rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: border-color 0.4s ease;
+}
+
+.product-card-premium:hover {
+    border-color: var(--gold-base);
 }
 
 .tag {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-secondary);
+    letter-spacing: 3px;
+    color: var(--gold-base);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
     display: block;
-    margin-bottom: 0.5rem;
+}
+
+.product-card-premium h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-card-premium p {
+    color: #aaaaaa;
 }
 
 /* Footer */
 .footer {
     text-align: center;
-    padding: 3rem;
-    border-top: 1px solid var(--glass-border);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    padding: 4rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    color: #666666;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
 }
 
-/* Animations */
+/* Scroll Animations Script Helper Classes */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .grid-2 { grid-template-columns: 1fr; }
 }
